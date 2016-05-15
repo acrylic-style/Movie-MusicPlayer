@@ -40,20 +40,34 @@ namespace MusicPlayer_Midi
             d.InitialDirectory = Environment.CurrentDirectory;
             d.Title = "ファイルを選択...";
             d.SupportMultiDottedExtensions = true;
-            d.ShowDialog();
-            d.FilterIndex = 2;
+            d.FilterIndex = 1;
             d.Filter =
-    "MIDIファイル(*.midi;*.mid)|*.midi;*.mid|すべてのファイル(*.*)|*.*";
+    "全ての音楽ファイル(*.wav;*.wave;*.midi;*.mid;*.mp3;*.mpg)|*.wav;*.wave;*.midi;*.mid;*.mp3;*.mpg|MIDIファイル(*.midi;*.mid)|*.midi;*.mid|MP3ファイル(*.mp3;*.mpg)|*.mp3;*.mpg|すべてのファイル(*.*)|*.*";
+            d.ShowDialog();
+            // string playing = "false";
+            while (true)
+            {
+                string cmd;
+                string fileName = d.FileName;
+                cmd = "open \"" + fileName + "\" alias " + aliasName;
+                if (mciSendString(cmd, null, 0, IntPtr.Zero) != 0)
+                    return;
+                // 再生する
+                    cmd = "play " + aliasName;
+                    mciSendString(cmd, null, 0, IntPtr.Zero);
+                // playing = "true";
+                this.Text = "音楽プレーヤー - 再生中";
+                    if (checkBox1.Checked == true)
+                    {
+                    cmd = "playlooping " + aliasName;
+                    }
+                        else
+                    {
+                        break;
+                    }
+                }
+           }
 
-            string fileName = d.FileName;
-            string cmd;
-            cmd = "open \"" + fileName + "\" alias " + aliasName;
-            if (mciSendString(cmd, null, 0, IntPtr.Zero) != 0)
-                return;
-            //再生する
-            cmd = "play " + aliasName;
-            mciSendString(cmd, null, 0, IntPtr.Zero);
-        }
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -63,6 +77,19 @@ namespace MusicPlayer_Midi
             //閉じる
             cmd = "close " + aliasName;
             mciSendString(cmd, null, 0, IntPtr.Zero);
+            this.Text = "音楽プレーヤー";
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form2 frm = new Form2();
+            frm.Show();
+            
         }
     }
 }
