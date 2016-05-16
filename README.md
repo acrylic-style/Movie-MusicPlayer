@@ -50,3 +50,7 @@ Recommended System:
  - Disk 0.5 MB(500 Kb)
  
  - .NET FrameworkVersion 4.6.1(Not work version is 4.6.0 and older.)
+
+
+This Application is Supported Language is 'Japanese(日本語)'
+Supported contry is 'Japan(日本)'
