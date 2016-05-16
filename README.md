@@ -4,6 +4,8 @@ Windowsのデフォルトで使えるものはすべて使用できます。
 ほとんどボタンだけでできているので非常にシンプルでどのPCでも動くと思います。
 が、WindowsXPやWindowsVistaは対象外です。
 そしてC#で作成しています。.NET Framework 4.6.1をインストールできる環境でないと、このソフトは動作しません。
+ディスクを最低1MB開けてください。
+そしてメモリは200MBあったほうがいいです。
 
 == 以下、微妙な英語 ==
 SupportedExtension: MIDI(.midi,.mid) and wav(.wav), mp3(.mp3), etc
@@ -14,7 +16,12 @@ This application is no ad.
 Not support Operating System: Windows Vista and older(Windows 2000, Windows Xp, etc).
 Supported Operating System: Windows7, Windows8.1(no Windows8), Windows10 [Home|Pro] and later.
 This application create language: c#
-Requirement System:
- - Mem 200 MB
- - Disk 1 MB
+Recommended System:
+ - Mem 200 Mb
+ - Disk 1 Mb
+ - .NET FrameworkVersion [Latest version.]
+ 
+ Requirement System:
+ - Mem 2 Mb
+ - Disk 0.5 MB(500 Kb)
  - .NET FrameworkVersion 4.6.1(Not work version is 4.6.0 and older.)
