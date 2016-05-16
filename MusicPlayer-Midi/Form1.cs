@@ -34,21 +34,11 @@ namespace MusicPlayer_Midi
 
         private void button2_Click(object sender, EventArgs e)
         {
-            OpenFileDialog d = new OpenFileDialog();
-            d.Reset();
-            d.DefaultExt = ".mid";
-            d.InitialDirectory = Environment.CurrentDirectory;
-            d.Title = "ファイルを選択...";
-            d.SupportMultiDottedExtensions = true;
-            d.FilterIndex = 1;
-            d.Filter =
-    "全ての音楽ファイル(*.wav;*.wave;*.midi;*.mid;*.mp3;*.mpg)|*.wav;*.wave;*.midi;*.mid;*.mp3;*.mpg|MIDIファイル(*.midi;*.mid)|*.midi;*.mid|MP3ファイル(*.mp3;*.mpg)|*.mp3;*.mpg|すべてのファイル(*.*)|*.*";
-            d.ShowDialog();
             // string playing = "false";
             while (true)
             {
                 string cmd;
-                string fileName = d.FileName;
+                string fileName = textBox1.Text;
                 cmd = "open \"" + fileName + "\" alias " + aliasName;
                 if (mciSendString(cmd, null, 0, IntPtr.Zero) != 0)
                     return;
@@ -89,6 +79,24 @@ namespace MusicPlayer_Midi
         {
             Form2 frm = new Form2();
             frm.Show();
+            
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog d = new OpenFileDialog();
+            d.Reset();
+            d.DefaultExt = ".mid";
+            d.InitialDirectory = Environment.CurrentDirectory;
+            d.Title = "ファイルを選択...";
+            d.SupportMultiDottedExtensions = true;
+            d.FilterIndex = 1;
+            d.Filter =
+    "全ての音楽ファイル(*.wav;*.wave;*.midi;*.mid;*.mp3;*.mpg)|*.wav;*.wave;*.midi;*.mid;*.mp3;*.mpg|MIDIファイル(*.midi;*.mid)|*.midi;*.mid|MP3ファイル(*.mp3;*.mpg)|*.mp3;*.mpg|すべてのファイル(*.*)|*.*";
+            if (d.ShowDialog() == DialogResult.OK)
+            {
+                textBox1.Text = d.FileName;
+            }
             
         }
     }
