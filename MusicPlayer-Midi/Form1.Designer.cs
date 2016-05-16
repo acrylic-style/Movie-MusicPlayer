@@ -78,6 +78,7 @@
             // 
             // button1
             // 
+            this.button1.Enabled = false;
             this.button1.ForeColor = System.Drawing.Color.Blue;
             this.button1.Location = new System.Drawing.Point(13, 73);
             this.button1.Name = "button1";
