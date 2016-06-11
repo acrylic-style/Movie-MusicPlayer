@@ -36,6 +36,8 @@
             this.button5 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button2
@@ -83,9 +85,9 @@
             // 
             this.button1.Enabled = false;
             this.button1.ForeColor = System.Drawing.Color.Blue;
-            this.button1.Location = new System.Drawing.Point(13, 96);
+            this.button1.Location = new System.Drawing.Point(12, 122);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(291, 23);
+            this.button1.Size = new System.Drawing.Size(341, 23);
             this.button1.TabIndex = 5;
             this.button1.Text = "Testing - Development team only.";
             this.button1.UseVisualStyleBackColor = true;
@@ -93,7 +95,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(285, 71);
+            this.button5.Location = new System.Drawing.Point(334, 71);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(19, 23);
             this.button5.TabIndex = 6;
@@ -105,7 +107,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(13, 71);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(266, 19);
+            this.textBox1.Size = new System.Drawing.Size(315, 19);
             this.textBox1.TabIndex = 7;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -120,11 +122,30 @@
             this.checkBox2.UseVisualStyleBackColor = true;
             this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(12, 97);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(316, 19);
+            this.textBox2.TabIndex = 9;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(334, 97);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(19, 23);
+            this.button6.TabIndex = 10;
+            this.button6.Text = "...";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(319, 131);
+            this.ClientSize = new System.Drawing.Size(365, 163);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button5);
@@ -150,6 +171,8 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button6;
     }
 }
 

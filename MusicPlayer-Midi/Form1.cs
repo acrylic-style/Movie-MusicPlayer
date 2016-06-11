@@ -107,7 +107,7 @@ namespace MusicPlayer_Midi
             OpenFileDialog d = new OpenFileDialog();
             d.Reset();
             d.DefaultExt = ".mp3";
-            d.InitialDirectory = Environment.CurrentDirectory;
+            d.InitialDirectory = "C:\\Users\\" + Environment.UserName + "\\Desktop";
             d.Title = "ファイルを選択";
             d.SupportMultiDottedExtensions = true;
             d.FilterIndex = 1;
@@ -151,6 +151,12 @@ namespace MusicPlayer_Midi
         private void Form1_Load(object sender, EventArgs e)
         {
             checkBox2.Enabled = false;
+            textBox2.Text = "ここに↑の初期フォルダーを入力してください, わからない方はそのままで";
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
