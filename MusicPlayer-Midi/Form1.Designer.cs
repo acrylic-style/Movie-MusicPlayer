@@ -35,6 +35,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // button2
@@ -51,7 +52,7 @@
             // 
             this.button3.Location = new System.Drawing.Point(141, 11);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(111, 23);
+            this.button3.Size = new System.Drawing.Size(99, 23);
             this.button3.TabIndex = 2;
             this.button3.Text = "停止";
             this.button3.UseVisualStyleBackColor = true;
@@ -61,7 +62,7 @@
             // 
             this.button4.Location = new System.Drawing.Point(13, 43);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(174, 23);
+            this.button4.Size = new System.Drawing.Size(227, 23);
             this.button4.TabIndex = 3;
             this.button4.Text = "閉じる";
             this.button4.UseVisualStyleBackColor = true;
@@ -70,7 +71,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(193, 46);
+            this.checkBox1.Location = new System.Drawing.Point(246, 47);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(58, 16);
             this.checkBox1.TabIndex = 4;
@@ -84,7 +85,7 @@
             this.button1.ForeColor = System.Drawing.Color.Blue;
             this.button1.Location = new System.Drawing.Point(13, 96);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(239, 23);
+            this.button1.Size = new System.Drawing.Size(291, 23);
             this.button1.TabIndex = 5;
             this.button1.Text = "Testing - Development team only.";
             this.button1.UseVisualStyleBackColor = true;
@@ -92,7 +93,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(231, 69);
+            this.button5.Location = new System.Drawing.Point(285, 71);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(19, 23);
             this.button5.TabIndex = 6;
@@ -104,14 +105,27 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(13, 71);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(212, 19);
+            this.textBox1.Size = new System.Drawing.Size(266, 19);
             this.textBox1.TabIndex = 7;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(246, 17);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(72, 16);
+            this.checkBox2.TabIndex = 8;
+            this.checkBox2.Text = "自動再生";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(263, 131);
+            this.ClientSize = new System.Drawing.Size(319, 131);
+            this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button1);
@@ -121,6 +135,7 @@
             this.Controls.Add(this.button2);
             this.Name = "Form1";
             this.Text = "音楽プレーヤー";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,6 +149,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }
 

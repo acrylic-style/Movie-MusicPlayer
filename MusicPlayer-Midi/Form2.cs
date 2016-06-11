@@ -29,8 +29,15 @@ namespace MusicPlayer_Midi
             }
         }
 
+        private void PlaySound2(string sound)
+        {
+            
+
+        }
+
         private void PlaySound(string waveFile)
         {
+            
             System.Media.SoundPlayer player = new System.Media.SoundPlayer(waveFile);
             if (player != null)
                 StopSound();

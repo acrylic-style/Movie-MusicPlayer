@@ -35,7 +35,7 @@ namespace MusicPlayer_Midi
         private void button2_Click(object sender, EventArgs e)
         {
             // string playing = "false";
-            while (true)
+            
             {
                 string cmd;
                 string fileName = textBox1.Text;
@@ -46,19 +46,39 @@ namespace MusicPlayer_Midi
                     cmd = "play " + aliasName;
                     mciSendString(cmd, null, 0, IntPtr.Zero);
                 // playing = "true";
-                this.Text = "音楽プレーヤー - 再生中";
+                Text = "音楽プレーヤー - 再生中";
+
                     if (checkBox1.Checked == true)
                     {
-                    cmd = "playlooping " + aliasName;
+                    while (true)
+
+                    {
+                        cmd = "open \"" + fileName + "\" alias " + aliasName;
+                        if (mciSendString(cmd, null, 0, IntPtr.Zero) != 0)
+                            cmd = "stop " + aliasName;
+                        mciSendString(cmd, null, 0, IntPtr.Zero);
+                        
+                        // 再生する
+
+                        cmd = "play " + aliasName;
+                        mciSendString(cmd, null, 0, IntPtr.Zero);
+                        
+                        continue;
+                        return;
+
+                    }
+                    
                     }
                         else
                     {
-                        break;
+                   // cmd = "stop " + aliasName;
+                   // mciSendString(cmd, null, 0, IntPtr.Zero);
+                   // Text = "音楽プレーヤー";
                     }
+                  
                 }
            }
-
-
+        
         private void button3_Click(object sender, EventArgs e)
         {
             string cmd;
@@ -67,12 +87,12 @@ namespace MusicPlayer_Midi
             //閉じる
             cmd = "close " + aliasName;
             mciSendString(cmd, null, 0, IntPtr.Zero);
-            this.Text = "音楽プレーヤー";
+            Text = "音楽プレーヤー";
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-
+            // 何もしない
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -86,9 +106,9 @@ namespace MusicPlayer_Midi
         {
             OpenFileDialog d = new OpenFileDialog();
             d.Reset();
-            d.DefaultExt = ".mid";
+            d.DefaultExt = ".mp3";
             d.InitialDirectory = Environment.CurrentDirectory;
-            d.Title = "ファイルを選択...";
+            d.Title = "ファイルを選択";
             d.SupportMultiDottedExtensions = true;
             d.FilterIndex = 1;
             d.Filter =
@@ -98,6 +118,39 @@ namespace MusicPlayer_Midi
                 textBox1.Text = d.FileName;
             }
             
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked == true)
+            {
+                string cmd;
+                string fileName = textBox1.Text;
+                cmd = "open \"" + fileName + "\" alias " + aliasName;
+                if (mciSendString(cmd, null, 0, IntPtr.Zero) != 0)
+                    return;
+                // 一度停止する
+                cmd = "stop " + aliasName;
+                mciSendString(cmd, null, 0, IntPtr.Zero);
+                // playing = "true";
+                Text = "音楽プレーヤー - 再生中";
+                cmd = "start " + aliasName;
+                mciSendString(cmd, null, 0, IntPtr.Zero);
+            }
+            else
+            {
+                // 何もしない
+            }
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            // 何もしない
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            checkBox2.Enabled = false;
         }
     }
 }

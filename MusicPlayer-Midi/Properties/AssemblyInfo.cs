@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // アセンブリに関する一般情報は以下の属性セットをとおして制御されます。
 // アセンブリに関連付けられている情報を変更するには、
 // これらの属性値を変更してください。
-[assembly: AssemblyTitle("MusicPlayer-Midi")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("MusicPlayer")]
+[assembly: AssemblyDescription("ミュージックプレーヤー")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MusicPlayer-Midi")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyProduct("MusicPlayer")]
+[assembly: AssemblyCopyright("Copyright ©  2016 rht0910 All Rights Reserved.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
