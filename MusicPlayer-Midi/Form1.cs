@@ -53,8 +53,7 @@ namespace MusicPlayer_Midi
                     while (true)
 
                     {
-                        cmd = "open \"" + fileName + "\" alias " + aliasName;
-                        if (mciSendString(cmd, null, 0, IntPtr.Zero) != 0)
+
                             cmd = "stop " + aliasName;
                         mciSendString(cmd, null, 0, IntPtr.Zero);
                         
@@ -62,9 +61,7 @@ namespace MusicPlayer_Midi
 
                         cmd = "play " + aliasName;
                         mciSendString(cmd, null, 0, IntPtr.Zero);
-                        
                         continue;
-                        return;
 
                     }
                     
@@ -150,6 +147,7 @@ namespace MusicPlayer_Midi
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            checkBox1.Enabled = false;
             checkBox2.Enabled = false;
             textBox2.Text = "ここに↑の初期フォルダーを入力してください, わからない方はそのままで";
         }
