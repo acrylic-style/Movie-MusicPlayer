@@ -156,5 +156,11 @@ namespace MusicPlayer_Midi
         {
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            
+            
+        }
     }
 }
