@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -37,6 +38,10 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.player = new AxWMPLib.AxWindowsMediaPlayer();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
@@ -72,7 +77,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(246, 47);
+            this.checkBox1.Location = new System.Drawing.Point(709, 104);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(58, 16);
             this.checkBox1.TabIndex = 4;
@@ -82,7 +87,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(334, 71);
+            this.button5.Location = new System.Drawing.Point(498, 69);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(19, 23);
             this.button5.TabIndex = 6;
@@ -94,14 +99,14 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(13, 71);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(315, 19);
+            this.textBox1.Size = new System.Drawing.Size(479, 19);
             this.textBox1.TabIndex = 7;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(246, 17);
+            this.checkBox2.Location = new System.Drawing.Point(631, 104);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(72, 16);
             this.checkBox2.TabIndex = 8;
@@ -113,12 +118,12 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(12, 97);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(316, 19);
+            this.textBox2.Size = new System.Drawing.Size(480, 19);
             this.textBox2.TabIndex = 9;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(334, 97);
+            this.button6.Location = new System.Drawing.Point(498, 95);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(19, 23);
             this.button6.TabIndex = 10;
@@ -126,11 +131,44 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(246, 43);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(69, 16);
+            this.checkBox3.TabIndex = 11;
+            this.checkBox3.Text = "常に手前";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            // 
+            // player
+            // 
+            this.player.Enabled = true;
+            this.player.Location = new System.Drawing.Point(13, 126);
+            this.player.Name = "player";
+            this.player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player.OcxState")));
+            this.player.Size = new System.Drawing.Size(771, 221);
+            this.player.TabIndex = 12;
+            this.player.Enter += new System.EventHandler(this.player_Enter);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(523, 108);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 12);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "↓テスト中↓";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(365, 124);
+            this.ClientSize = new System.Drawing.Size(779, 359);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.player);
+            this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.checkBox2);
@@ -143,6 +181,7 @@
             this.Name = "Form1";
             this.Text = "音楽プレーヤー";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,6 +197,9 @@
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private AxWMPLib.AxWindowsMediaPlayer player;
+        private System.Windows.Forms.Label label1;
     }
 }
 

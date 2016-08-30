@@ -62,7 +62,7 @@ namespace MusicPlayer_Midi
                         cmd = "play " + aliasName;
                         mciSendString(cmd, null, 0, IntPtr.Zero);
                         continue;
-
+                        
                     }
                     
                     }
@@ -89,7 +89,7 @@ namespace MusicPlayer_Midi
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            // 何もしない
+            player.settings.setMode("loop", true);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -104,8 +104,15 @@ namespace MusicPlayer_Midi
             OpenFileDialog d = new OpenFileDialog();
             d.Reset();
             d.DefaultExt = ".mp3";
-            d.InitialDirectory = "C:\\Users\\" + Environment.UserName + "\\Desktop";
-            d.Title = "ファイルを選択";
+            if (textBox2.Text == "ここに↑の初期フォルダーを入力してください, わからない方はそのままで")
+            {
+                d.InitialDirectory = "C:\\Users\\" + Environment.UserName + "\\Desktop";
+            }
+            else
+            {
+                d.InitialDirectory = textBox2.Text;
+            }
+                d.Title = "ファイルを選択";
             d.SupportMultiDottedExtensions = true;
             d.FilterIndex = 1;
             d.Filter =
@@ -138,22 +145,39 @@ namespace MusicPlayer_Midi
             {
                 // 何もしない
             }
+            player.URL = textBox1.Text;
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-            // 何もしない
+            player.settings.autoStart = true;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            checkBox1.Enabled = false;
-            checkBox2.Enabled = false;
+            
             textBox2.Text = "ここに↑の初期フォルダーを入力してください, わからない方はそのままで";
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
+            //FolderBrowserDialogクラスのインスタンスを作成
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+
+            //上部に表示する説明テキストを指定する
+            fbd.Description = "フォルダを指定してください。";
+            //ルートフォルダを指定する
+            //デフォルトでDesktop
+            fbd.RootFolder = Environment.SpecialFolder.Desktop;
+            //最初に選択するフォルダを指定する
+            //RootFolder以下にあるフォルダである必要がある
+            fbd.SelectedPath = @"C:\Users\" + Environment.UserName;
+            //ユーザーが新しいフォルダを作成できるようにする
+            //デフォルトでTrue
+            fbd.ShowNewFolderButton = true;
+            fbd.ShowDialog(this);
+            textBox2.Text = fbd.SelectedPath;
+            fbd.Dispose();
 
         }
 
@@ -161,6 +185,19 @@ namespace MusicPlayer_Midi
         {
             
             
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox3.Enabled == true)
+            {
+                this.TopMost = !this.TopMost;
+            }
+        }
+
+        private void player_Enter(object sender, EventArgs e)
+        {
+            player.URL = textBox1.Text;
         }
     }
 }
