@@ -150,12 +150,19 @@ namespace MusicPlayer_Midi
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-            player.settings.autoStart = true;
+            if (checkBox2.Enabled == true)
+            {
+                player.settings.autoStart = true;
+            }
+            else
+            {
+                player.settings.autoStart = false;
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            player.settings.volume = 100;
             textBox2.Text = "ここに↑の初期フォルダーを入力してください, わからない方はそのままで";
         }
 
@@ -198,6 +205,16 @@ namespace MusicPlayer_Midi
         private void player_Enter(object sender, EventArgs e)
         {
             player.URL = textBox1.Text;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            // Deprecated
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBox.Show("自動再生がバグっています。", "注意", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
     }
 }

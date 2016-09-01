@@ -40,7 +40,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.player = new AxWMPLib.AxWindowsMediaPlayer();
-            this.label1 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.SuspendLayout();
             // 
@@ -145,28 +145,30 @@
             // player
             // 
             this.player.Enabled = true;
-            this.player.Location = new System.Drawing.Point(13, 126);
+            this.player.Location = new System.Drawing.Point(0, 126);
             this.player.Name = "player";
             this.player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player.OcxState")));
-            this.player.Size = new System.Drawing.Size(771, 221);
+            this.player.Size = new System.Drawing.Size(779, 390);
             this.player.TabIndex = 12;
             this.player.Enter += new System.EventHandler(this.player_Enter);
             // 
-            // label1
+            // linkLabel1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(523, 108);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 12);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "↓テスト中↓";
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(552, 111);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(67, 12);
+            this.linkLabel1.TabIndex = 14;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "↓テスト中↓";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(779, 359);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(779, 516);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.player);
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.button6);
@@ -179,7 +181,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Name = "Form1";
-            this.Text = "音楽プレーヤー";
+            this.Text = "ビデオ/ミュージックプレーヤー";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             this.ResumeLayout(false);
@@ -199,7 +201,7 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.CheckBox checkBox3;
         private AxWMPLib.AxWindowsMediaPlayer player;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 
