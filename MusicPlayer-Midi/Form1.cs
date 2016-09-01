@@ -46,7 +46,6 @@ namespace MusicPlayer_Midi
                     cmd = "play " + aliasName;
                     mciSendString(cmd, null, 0, IntPtr.Zero);
                 // playing = "true";
-                Text = "音楽プレーヤー - 再生中";
 
                     if (checkBox1.Checked == true)
                     {
@@ -84,7 +83,6 @@ namespace MusicPlayer_Midi
             //閉じる
             cmd = "close " + aliasName;
             mciSendString(cmd, null, 0, IntPtr.Zero);
-            Text = "音楽プレーヤー";
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -137,7 +135,6 @@ namespace MusicPlayer_Midi
                 cmd = "stop " + aliasName;
                 mciSendString(cmd, null, 0, IntPtr.Zero);
                 // playing = "true";
-                Text = "音楽プレーヤー - 再生中";
                 cmd = "start " + aliasName;
                 mciSendString(cmd, null, 0, IntPtr.Zero);
             }
