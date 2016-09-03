@@ -4,15 +4,6 @@ setup.exe でセットアップしてからご使用ください。
 Microsoft .NET Framework 4.6.2 Preview ( Microsoft .NET Framework 4.6.2 Preview Runtime )
 なお、Microsoft .NET Framework 4.6.2 Preview から上のバージョン以外では動作しません。
 
-使い方：
-1.「...」でファイルを選択します。
-2.「再生」で再生を開始します。
-3.「停止」で音楽を停止します。
-4.「閉じる」でアプリを閉じます。
+Wiki: https://github.com/rht0910/Movie-MusicPlayer/wiki
 
-<  *  > 使用上のご注意 <  *  >
-
-シーク機能はありません。
-
-音楽が停止した後、一度「停止」を押さないと２回目が流れない仕様となっています。
-リピートのチェックボックスをオンにすると音楽がリピートされます。<-現在うまく動作しません。
+使い方: https://github.com/rht0910/Movie-MusicPlayer/wiki/ja:how-to-use
