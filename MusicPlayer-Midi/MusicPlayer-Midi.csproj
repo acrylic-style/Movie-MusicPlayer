@@ -24,13 +24,12 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>false</MapFileExtensions>
-    <SupportUrl>https://wiki.dorakon.f5.si/wiki/index.php/MusicPlayerSupport</SupportUrl>
-    <ErrorReportUrl>https://wiki.dorakon.f5.si/wiki/index.php/MusicPlayerError</ErrorReportUrl>
-    <ProductName>ミュージックプレーヤー</ProductName>
+    <ProductName>MovieAndMusicPlayer</ProductName>
     <PublisherName>TwitterID%40rht0910</PublisherName>
-    <SuiteName>ミュージックプレーヤー</SuiteName>
+    <SuiteName>MovieAndMusicPlayer</SuiteName>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>2</ApplicationRevision>
+    <TrustUrlParameters>true</TrustUrlParameters>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>1.3.1.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

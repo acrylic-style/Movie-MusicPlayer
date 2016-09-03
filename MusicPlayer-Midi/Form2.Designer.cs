@@ -118,7 +118,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Name = "Form2";
-            this.Text = "改良版音楽プレーヤー";
+            this.Text = ")改良版音楽プレーヤー(wave専用";
             this.ResumeLayout(false);
             this.PerformLayout();
 

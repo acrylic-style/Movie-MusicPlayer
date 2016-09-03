@@ -41,6 +41,7 @@
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.player = new AxWMPLib.AxWindowsMediaPlayer();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,7 +78,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(709, 104);
+            this.checkBox1.Location = new System.Drawing.Point(676, 110);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(58, 16);
             this.checkBox1.TabIndex = 4;
@@ -106,7 +107,7 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(631, 104);
+            this.checkBox2.Location = new System.Drawing.Point(598, 110);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(72, 16);
             this.checkBox2.TabIndex = 8;
@@ -134,7 +135,7 @@
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(246, 43);
+            this.checkBox3.Location = new System.Drawing.Point(527, 15);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(69, 16);
             this.checkBox3.TabIndex = 11;
@@ -148,14 +149,14 @@
             this.player.Location = new System.Drawing.Point(0, 126);
             this.player.Name = "player";
             this.player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player.OcxState")));
-            this.player.Size = new System.Drawing.Size(779, 390);
+            this.player.Size = new System.Drawing.Size(734, 390);
             this.player.TabIndex = 12;
             this.player.Enter += new System.EventHandler(this.player_Enter);
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(552, 111);
+            this.linkLabel1.Location = new System.Drawing.Point(525, 111);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(67, 12);
             this.linkLabel1.TabIndex = 14;
@@ -163,11 +164,22 @@
             this.linkLabel1.Text = "↓テスト中↓";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(248, 11);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(269, 54);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "WindowsMediaPlayer で開く";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_3);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(779, 516);
+            this.ClientSize = new System.Drawing.Size(734, 516);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.player);
             this.Controls.Add(this.checkBox3);
@@ -202,6 +214,7 @@
         private System.Windows.Forms.CheckBox checkBox3;
         private AxWMPLib.AxWindowsMediaPlayer player;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

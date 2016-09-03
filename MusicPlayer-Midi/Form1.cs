@@ -24,9 +24,34 @@ namespace MusicPlayer_Midi
 
         private string aliasName = "MediaFile";
 
+        public static int arguments(string[] args)
+        {
+            AxWMPLib.AxWindowsMediaPlayer player = new AxWMPLib.AxWindowsMediaPlayer();
+            if (args.Length != 1)
+            {
+                Console.Write("引数の値がおかしいです。実行できません。");
+                return -1;
+            }
+            try
+            {
+                player.settings.autoStart = true;
+                player.settings.setMode("loop", true);
+                player.URL = args[0]; // Set Player URL
+                player.Show();
+                
+                
+            }
+            catch (Exception e)
+            {
+                Console.Write(e.Message+"\n");
+            }
+
+            return 0;
+        }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            
             Dispose();
             Application.Exit();
         }
@@ -100,8 +125,7 @@ namespace MusicPlayer_Midi
         private void button5_Click(object sender, EventArgs e)
         {
             OpenFileDialog d = new OpenFileDialog();
-            d.Reset();
-            d.DefaultExt = ".mp3";
+            d.Reset(); // initial dialog box
             if (textBox2.Text == "ここに↑の初期フォルダーを入力してください, わからない方はそのままで")
             {
                 d.InitialDirectory = "C:\\Users\\" + Environment.UserName + "\\Desktop";
@@ -114,7 +138,7 @@ namespace MusicPlayer_Midi
             d.SupportMultiDottedExtensions = true;
             d.FilterIndex = 1;
             d.Filter =
-    "全ての音楽ファイル(*.wav;*.wave;*.midi;*.mid;*.mp3;*.mpg)|*.wav;*.wave;*.midi;*.mid;*.mp3;*.mpg|MIDIファイル(*.midi;*.mid)|*.midi;*.mid|MP3ファイル(*.mp3;*.mpg)|*.mp3;*.mpg|すべてのファイル(*.*)|*.*";
+    "全てのサポートされるタイプ(*.wav;*.wave;*.midi;*.mid;*.mp3;*.mpg;*.midi;*.mid;*.m4a;*.avi;*.mp4;*.mpeg;*.ogg;*.vob;*.mov;*.wma;*.asf;*.asx;*.wax;*.wm;*.wmv;*.wvx;*.rmi)|*.wav;*.wave;*.midi;*.mid;*.mp3;*.mpg;*.midi;*.mid;*.m4a;*.avi;*.mp4;*.mpeg;*.ogg;*.vob;*.mov;*.wma;*.asf;*.asx;*.wax;*.wm;*.wmv;*.wvx;*.rmi|全ての動画ファイル(*.avi;*.mp4;*.mpeg;*.vob;*.mov;*.wma;*.asf;*.asx;*.wax;*.wm;*.wmv;*.wvx)|*.avi;*.mp4;*.mpeg;*.vob;*.mov;*.wma;*.asf;*.asx;*.wax;*.wm;*.wmv;*.wvx|全ての音楽ファイル(*.wav;*.wave;*.midi;*.mid;*.mp3;*.mpg;*.midi;*.mid;*.m4a)|*.wav;*.wave;*.midi;*.mid;*.mp3;*.mpg;*.midi;*.mid;*.m4a|MP3ファイル(*.mp3;*.mpg)|*.mp3;*.mpg|すべてのファイル(*.*)|*.*";
             if (d.ShowDialog() == DialogResult.OK)
             {
                 textBox1.Text = d.FileName;
@@ -142,7 +166,19 @@ namespace MusicPlayer_Midi
             {
                 // 何もしない
             }
-            player.URL = textBox1.Text;
+            try
+            {
+                player.URL = textBox1.Text;
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show("テキストボックスの中が不正な値のため、操作に失敗しました。詳細情報：" + exp, "エラーが発生しました", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            if(textBox1.Text != null)
+            {
+                button1.Enabled = true;
+            }
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
@@ -159,6 +195,9 @@ namespace MusicPlayer_Midi
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            button1.Enabled = false;
+            player.settings.autoStart = false;
+            
             player.settings.volume = 100;
             textBox2.Text = "ここに↑の初期フォルダーを入力してください, わからない方はそのままで";
         }
@@ -212,6 +251,23 @@ namespace MusicPlayer_Midi
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             MessageBox.Show("自動再生がバグっています。", "注意", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click_3(object sender, EventArgs e)
+        {
+            try
+            {
+                player.openPlayer(textBox1.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("テキストボックスは、nullではないですが、表示ができないため、エラーです。詳細情報：" + ex, "エラーが発生しました", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
