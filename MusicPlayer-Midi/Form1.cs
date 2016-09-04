@@ -98,8 +98,19 @@ namespace MusicPlayer_Midi
                     }
                   
                 }
+            while (true)
+            {
+                
+            }
+
+
            }
-        
+
+        private void Player_Invalidated(object sender, InvalidateEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
             string cmd;
@@ -264,10 +275,23 @@ namespace MusicPlayer_Midi
             {
                 player.openPlayer(textBox1.Text);
             }
-            catch (Exception ex)
+            
+            catch
             {
-                MessageBox.Show("テキストボックスは、nullではないですが、表示ができないため、エラーです。詳細情報：" + ex, "エラーが発生しました", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    player.openPlayer(player.URL);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("テキストボックスは、nullではないですが、表示ができないため、エラーです。詳細情報：" + ex, "エラーが発生しました", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
+    }
+
+    public partial class Form2 : Form
+    {
+        // test
     }
 }
