@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.WindowsAPICodePack.Dialogs;
 
 namespace MusicPlayer_Midi
 {
@@ -20,9 +21,8 @@ namespace MusicPlayer_Midi
         [System.Runtime.InteropServices.DllImport("winmm.dll",
     CharSet = System.Runtime.InteropServices.CharSet.Auto)]
         private static extern int mciSendString(string command,
-   System.Text.StringBuilder buffer, int bufferSize, IntPtr hwndCallback);
+   StringBuilder buffer, int bufferSize, IntPtr hwndCallback);
 
-        private string aliasName = "MediaFile";
 
         public static int arguments(string[] args)
         {
@@ -56,7 +56,7 @@ namespace MusicPlayer_Midi
             Application.Exit();
         }
 
-
+        /* // Deprecated
         private void button2_Click(object sender, EventArgs e)
         {
             // string playing = "false";
@@ -105,6 +105,8 @@ namespace MusicPlayer_Midi
 
 
            }
+        
+
 
         private void Player_Invalidated(object sender, InvalidateEventArgs e)
         {
@@ -120,18 +122,18 @@ namespace MusicPlayer_Midi
             cmd = "close " + aliasName;
             mciSendString(cmd, null, 0, IntPtr.Zero);
         }
-
+        */
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             player.settings.setMode("loop", true);
         }
-
+        /* Deprecated
         private void button1_Click(object sender, EventArgs e)
         {
             Form2 frm = new Form2();
             frm.Show();
             
-        }
+        }*/
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -156,27 +158,9 @@ namespace MusicPlayer_Midi
             }
             
         }
-
+        
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (checkBox2.Checked == true)
-            {
-                string cmd;
-                string fileName = textBox1.Text;
-                cmd = "open \"" + fileName + "\" alias " + aliasName;
-                if (mciSendString(cmd, null, 0, IntPtr.Zero) != 0)
-                    return;
-                // 一度停止する
-                cmd = "stop " + aliasName;
-                mciSendString(cmd, null, 0, IntPtr.Zero);
-                // playing = "true";
-                cmd = "start " + aliasName;
-                mciSendString(cmd, null, 0, IntPtr.Zero);
-            }
-            else
-            {
-                // 何もしない
-            }
             try
             {
                 player.URL = textBox1.Text;
@@ -215,25 +199,22 @@ namespace MusicPlayer_Midi
 
         private void button6_Click(object sender, EventArgs e)
         {
-            //FolderBrowserDialogクラスのインスタンスを作成
-            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            string default_dir = textBox2.Text;  
+            var Dialog = new CommonOpenFileDialog();
+            Dialog.IsFolderPicker = true;
+            Dialog.EnsureReadOnly = true;
+            Dialog.AllowNonFileSystemItems = false;
+            Dialog.DefaultDirectory = default_dir;
+            var Result = Dialog.ShowDialog();
 
-            //上部に表示する説明テキストを指定する
-            fbd.Description = "フォルダを指定してください。";
-            //ルートフォルダを指定する
-            //デフォルトでDesktop
-            fbd.RootFolder = Environment.SpecialFolder.Desktop;
-            //最初に選択するフォルダを指定する
-            //RootFolder以下にあるフォルダである必要がある
-            fbd.SelectedPath = @"C:\Users\" + Environment.UserName;
-            //ユーザーが新しいフォルダを作成できるようにする
-            //デフォルトでTrue
-            fbd.ShowNewFolderButton = true;
-            fbd.ShowDialog(this);
-            textBox2.Text = fbd.SelectedPath;
-            fbd.Dispose();
-
+            if (Result == CommonFileDialogResult.Ok)
+            {
+                textBox2.Text = Dialog.FileName;
+            }
+            Dialog.Dispose();
+            
         }
+
 
         private void button1_Click_1(object sender, EventArgs e)
         {
