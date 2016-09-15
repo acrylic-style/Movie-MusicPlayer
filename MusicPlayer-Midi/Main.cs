@@ -199,7 +199,8 @@ namespace MusicPlayer_Midi
 
         private void button6_Click(object sender, EventArgs e)
         {
-            string default_dir = textBox2.Text;  
+            string default_dir = textBox2.Text;
+            
             var Dialog = new CommonOpenFileDialog();
             Dialog.IsFolderPicker = true;
             Dialog.EnsureReadOnly = true;
@@ -242,7 +243,7 @@ namespace MusicPlayer_Midi
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MessageBox.Show("自動再生がバグっています。", "注意", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            MessageBox.Show("自動再生がバグるかもしれない", "WMP仕様上の注意(?)", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
         private void button1_Click_2(object sender, EventArgs e)
