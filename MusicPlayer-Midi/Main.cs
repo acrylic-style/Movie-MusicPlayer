@@ -200,20 +200,36 @@ namespace MusicPlayer_Midi
         private void button6_Click(object sender, EventArgs e)
         {
             string default_dir = textBox2.Text;
-            
-            var Dialog = new CommonOpenFileDialog();
-            Dialog.IsFolderPicker = true;
-            Dialog.EnsureReadOnly = true;
-            Dialog.AllowNonFileSystemItems = false;
-            Dialog.DefaultDirectory = default_dir;
-            var Result = Dialog.ShowDialog();
-
-            if (Result == CommonFileDialogResult.Ok)
+            try
             {
-                textBox2.Text = Dialog.FileName;
+                var Dialog = new CommonOpenFileDialog();
+                Dialog.IsFolderPicker = true;
+                Dialog.EnsureReadOnly = true;
+                Dialog.AllowNonFileSystemItems = false;
+                Dialog.DefaultDirectory = default_dir;
+                var Result = Dialog.ShowDialog();
+
+                if (Result == CommonFileDialogResult.Ok)
+                {
+                    textBox2.Text = Dialog.FileName;
+                }
+                Dialog.Dispose();
             }
-            Dialog.Dispose();
-            
+            catch
+            {
+                MessageBox.Show("このシステムによって、このコンピュータは\"CommonOpenFileDialog(Microsoft.WindowsAPICodePack[-Core,-Shell])\"が使用できないことが検出されました。\n代わりに\"FolderBrowserDialog\"を開きます。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                FolderBrowserDialog d = new FolderBrowserDialog();
+                d.Description = "フォルダを指定してください。";
+                d.RootFolder = Environment.SpecialFolder.CommonDesktopDirectory;
+                d.SelectedPath = default_dir;
+                d.ShowNewFolderButton = true;
+                if (d.ShowDialog(this) == DialogResult.OK)
+                {
+                    textBox2.Text = d.SelectedPath;
+                }
+                d.Dispose();
+
+            }
         }
 
 
