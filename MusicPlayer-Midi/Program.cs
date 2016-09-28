@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MusicPlayer_Midi
+namespace Video_MusicPlayer
 {
     static class Program
     {

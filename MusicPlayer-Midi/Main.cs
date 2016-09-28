@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.WindowsAPICodePack.Dialogs;
 
-namespace MusicPlayer_Midi
+
+namespace Video_MusicPlayer
 {
     public partial class Form1 : Form
     {
@@ -38,102 +39,54 @@ namespace MusicPlayer_Midi
                 player.settings.setMode("loop", true);
                 player.URL = args[0]; // Set Player URL
                 player.Show();
-                
-                
+
+
             }
             catch (Exception e)
             {
-                Console.Write(e.Message+"\n");
+                Console.Write(e.Message + "\n");
             }
 
             return 0;
         }
 
+        /* This is Test area, Do not use this Area!
+        private AxWMPLib.AxWindowsMediaPlayer players;
+
+        protected void Drag_Enter(object s,DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.All;
+        }
+
+        protected void Drag_Drop(object s,DragEventArgs e)
+        {
+            if(e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                foreach (string filename in (string[])e.Data.GetData(DataFormats.FileDrop))
+                {
+                    player.URL = filename;
+                }
+            }
+        }
+
+        public new DragDrop()
+        {
+            this.player = new AxWMPLib.AxWindowsMediaPlayer();
+            
+            
+        } */
+
         private void button4_Click(object sender, EventArgs e)
         {
-            
+
             Dispose();
             Application.Exit();
         }
 
-        /* // Deprecated
-        private void button2_Click(object sender, EventArgs e)
-        {
-            // string playing = "false";
-            
-            {
-                string cmd;
-                string fileName = textBox1.Text;
-                cmd = "open \"" + fileName + "\" alias " + aliasName;
-                if (mciSendString(cmd, null, 0, IntPtr.Zero) != 0)
-                    return;
-                // 再生する
-                    cmd = "play " + aliasName;
-                    mciSendString(cmd, null, 0, IntPtr.Zero);
-                // playing = "true";
-
-                    if (checkBox1.Checked == true)
-                    {
-                    while (true)
-
-                    {
-
-                            cmd = "stop " + aliasName;
-                        mciSendString(cmd, null, 0, IntPtr.Zero);
-                        
-                        // 再生する
-
-                        cmd = "play " + aliasName;
-                        mciSendString(cmd, null, 0, IntPtr.Zero);
-                        continue;
-                        
-                    }
-                    
-                    }
-                        else
-                    {
-                   // cmd = "stop " + aliasName;
-                   // mciSendString(cmd, null, 0, IntPtr.Zero);
-                   // Text = "音楽プレーヤー";
-                    }
-                  
-                }
-            while (true)
-            {
-                
-            }
-
-
-           }
-        
-
-
-        private void Player_Invalidated(object sender, InvalidateEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            string cmd;
-            cmd = "stop " + aliasName;
-            mciSendString(cmd, null, 0, IntPtr.Zero);
-            //閉じる
-            cmd = "close " + aliasName;
-            mciSendString(cmd, null, 0, IntPtr.Zero);
-        }
-        */
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             player.settings.setMode("loop", true);
         }
-        /* Deprecated
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form2 frm = new Form2();
-            frm.Show();
-            
-        }*/
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -147,7 +100,7 @@ namespace MusicPlayer_Midi
             {
                 d.InitialDirectory = textBox2.Text;
             }
-                d.Title = "ファイルを選択";
+            d.Title = "ファイルを選択";
             d.SupportMultiDottedExtensions = true;
             d.FilterIndex = 1;
             d.Filter =
@@ -156,9 +109,9 @@ namespace MusicPlayer_Midi
             {
                 textBox1.Text = d.FileName;
             }
-            
+
         }
-        
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             try
@@ -170,9 +123,14 @@ namespace MusicPlayer_Midi
                 MessageBox.Show("テキストボックスの中が不正な値のため、操作に失敗しました。詳細情報：" + exp, "エラーが発生しました", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            if(textBox1.Text != null)
+            if (textBox1.Text != null)
             {
                 button1.Enabled = true;
+                button8.Enabled = true;
+                button7.Enabled = true;
+                button2.Enabled = true;
+                button3.Enabled = true;
+                trackBar1.Enabled = true;
             }
         }
 
@@ -192,9 +150,15 @@ namespace MusicPlayer_Midi
         {
             button1.Enabled = false;
             player.settings.autoStart = false;
-            
+
             player.settings.volume = 100;
             textBox2.Text = "ここに↑の初期フォルダーを入力してください, わからない方はそのままで";
+
+            button7.Enabled = false;
+            button8.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
+            trackBar1.Enabled = false;
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -259,7 +223,7 @@ namespace MusicPlayer_Midi
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MessageBox.Show("自動再生がバグるかもしれない", "WMP仕様上の注意(?)", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            MessageBox.Show("自動再生がバグるかもしれない(このバグはなんだ?)", "WMP仕様上の注意(?)", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
         private void button1_Click_2(object sender, EventArgs e)
@@ -286,10 +250,30 @@ namespace MusicPlayer_Midi
                 }
             }
         }
-    }
 
-    public partial class Form2 : Form
-    {
-        // test
+        private void button2_Click(object sender, EventArgs e)
+        {
+            player.Ctlcontrols.play();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            player.Ctlcontrols.stop();
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            player.settings.balance = trackBar1.Value;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            player.Ctlcontrols.fastReverse();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            player.Ctlcontrols.fastForward();
+        }
     }
 }
