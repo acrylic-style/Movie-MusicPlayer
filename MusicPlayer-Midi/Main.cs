@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 using Microsoft.WindowsAPICodePack.Dialogs;
 
 
@@ -131,6 +132,9 @@ namespace Video_MusicPlayer
                 button2.Enabled = true;
                 button3.Enabled = true;
                 trackBar1.Enabled = true;
+                button9.Enabled = true;
+                button10.Enabled = true;
+                button11.Enabled = true;
             }
         }
 
@@ -150,7 +154,7 @@ namespace Video_MusicPlayer
         {
             button1.Enabled = false;
             player.settings.autoStart = false;
-
+            status.Text = "状態:再生されていません";
             player.settings.volume = 100;
             textBox2.Text = "ここに↑の初期フォルダーを入力してください, わからない方はそのままで";
 
@@ -159,6 +163,9 @@ namespace Video_MusicPlayer
             button2.Enabled = false;
             button3.Enabled = false;
             trackBar1.Enabled = false;
+            button9.Enabled = false;
+            button10.Enabled = false;
+            button11.Enabled = false;
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -254,16 +261,28 @@ namespace Video_MusicPlayer
         private void button2_Click(object sender, EventArgs e)
         {
             player.Ctlcontrols.play();
+            if(player.status != "接続しています...")
+            {
+                status.Text = "状態:" + player.status;
+            }
+            else
+            {
+                status.Text = "状態:" + player.status + " (再生ボタンを再度クリックすると正常に表示されます)";
+            }
+            
+            name.Text = "名前:" + player.currentMedia.name;
+            url.Text = "URL:" + player.currentMedia.sourceURL;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             player.Ctlcontrols.stop();
+            status.Text = "状態:" + player.status;
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            player.settings.balance = trackBar1.Value;
+            player.settings.volume = trackBar1.Value;
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -274,6 +293,22 @@ namespace Video_MusicPlayer
         private void button7_Click(object sender, EventArgs e)
         {
             player.Ctlcontrols.fastForward();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            player.Ctlcontrols.pause();
+            status.Text = "状態:" + player.status;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            player.Ctlcontrols.previous();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            player.Ctlcontrols.next();
         }
     }
 }
