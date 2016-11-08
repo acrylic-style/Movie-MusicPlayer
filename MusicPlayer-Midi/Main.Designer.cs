@@ -52,13 +52,19 @@
             this.status = new System.Windows.Forms.Label();
             this.name = new System.Windows.Forms.Label();
             this.url = new System.Windows.Forms.Label();
+            this.trackBar2 = new System.Windows.Forms.TrackBar();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             this.SuspendLayout();
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(539, 158);
+            this.button4.Location = new System.Drawing.Point(539, 231);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(51, 23);
             this.button4.TabIndex = 3;
@@ -69,7 +75,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(674, 166);
+            this.checkBox1.Location = new System.Drawing.Point(674, 239);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(58, 16);
             this.checkBox1.TabIndex = 4;
@@ -79,7 +85,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(496, 139);
+            this.button5.Location = new System.Drawing.Point(496, 212);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(19, 23);
             this.button5.TabIndex = 6;
@@ -89,7 +95,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(8, 141);
+            this.textBox1.Location = new System.Drawing.Point(8, 214);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(482, 19);
             this.textBox1.TabIndex = 7;
@@ -98,7 +104,7 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(596, 166);
+            this.checkBox2.Location = new System.Drawing.Point(596, 239);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(72, 16);
             this.checkBox2.TabIndex = 8;
@@ -108,14 +114,14 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(8, 160);
+            this.textBox2.Location = new System.Drawing.Point(8, 233);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(427, 19);
             this.textBox2.TabIndex = 9;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(441, 158);
+            this.button6.Location = new System.Drawing.Point(441, 231);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(19, 23);
             this.button6.TabIndex = 10;
@@ -126,7 +132,7 @@
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(657, 144);
+            this.checkBox3.Location = new System.Drawing.Point(657, 217);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(69, 16);
             this.checkBox3.TabIndex = 11;
@@ -138,7 +144,7 @@
             // 
             this.player.AllowDrop = true;
             this.player.Enabled = true;
-            this.player.Location = new System.Drawing.Point(0, 185);
+            this.player.Location = new System.Drawing.Point(0, 258);
             this.player.Name = "player";
             this.player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player.OcxState")));
             this.player.Size = new System.Drawing.Size(734, 381);
@@ -148,7 +154,7 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(466, 167);
+            this.linkLabel1.Location = new System.Drawing.Point(466, 240);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(67, 12);
             this.linkLabel1.TabIndex = 14;
@@ -158,7 +164,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(521, 139);
+            this.button1.Location = new System.Drawing.Point(521, 212);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(130, 21);
             this.button1.TabIndex = 15;
@@ -198,7 +204,7 @@
             // 
             // trackBar1
             // 
-            this.trackBar1.Location = new System.Drawing.Point(0, 90);
+            this.trackBar1.Location = new System.Drawing.Point(0, 163);
             this.trackBar1.Maximum = 100;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(734, 45);
@@ -210,11 +216,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(679, 75);
+            this.label1.Location = new System.Drawing.Point(617, 148);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.Size = new System.Drawing.Size(115, 12);
             this.label1.TabIndex = 20;
-            this.label1.Text = "↓音量↓";
+            this.label1.Text = "↓音量↓　↑2倍速↑";
             // 
             // button8
             // 
@@ -283,11 +289,66 @@
             this.url.TabIndex = 27;
             this.url.Text = "URL:";
             // 
+            // trackBar2
+            // 
+            this.trackBar2.Location = new System.Drawing.Point(0, 100);
+            this.trackBar2.Maximum = 4;
+            this.trackBar2.Name = "trackBar2";
+            this.trackBar2.Size = new System.Drawing.Size(732, 45);
+            this.trackBar2.TabIndex = 28;
+            this.trackBar2.Value = 1;
+            this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Blue;
+            this.label2.Location = new System.Drawing.Point(496, 148);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 12);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "1.5倍速↑";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Blue;
+            this.label3.Location = new System.Drawing.Point(316, 148);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 12);
+            this.label3.TabIndex = 30;
+            this.label3.Text = "1.25倍速↑";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Blue;
+            this.label4.Location = new System.Drawing.Point(151, 148);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 12);
+            this.label4.TabIndex = 31;
+            this.label4.Text = "1倍速↑";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Blue;
+            this.label5.Location = new System.Drawing.Point(6, 148);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 12);
+            this.label5.TabIndex = 32;
+            this.label5.Text = "↑0.75倍速";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 565);
+            this.ClientSize = new System.Drawing.Size(734, 638);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.trackBar2);
             this.Controls.Add(this.url);
             this.Controls.Add(this.name);
             this.Controls.Add(this.status);
@@ -316,6 +377,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,6 +407,11 @@
         private System.Windows.Forms.Label status;
         private System.Windows.Forms.Label name;
         private System.Windows.Forms.Label url;
+        private System.Windows.Forms.TrackBar trackBar2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }
 
