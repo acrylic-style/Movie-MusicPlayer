@@ -316,12 +316,14 @@ namespace Video_MusicPlayer
         {
             try
             {
-                double value = 1;
-                if(trackBar2.Value == 0) { value = 0.75; }
-                if(trackBar2.Value == 1) { value = 1; }
-                if(trackBar2.Value == 2) { value = 1.25; }
-                if(trackBar2.Value == 3) { value = 1.5; }
-                if(trackBar2.Value == 4) { value = 2; }
+                string sped = speed.Text;
+
+                double value = Double.Parse(sped);
+                if(trackBar2.Value == 0) { value = 0.75; speed.Text = "0.75"; }
+                if(trackBar2.Value == 1) { value = 1; speed.Text = "1"; }
+                if(trackBar2.Value == 2) { value = 1.25; speed.Text = "1.25"; }
+                if(trackBar2.Value == 3) { value = 1.5; speed.Text = "1.5"; }
+                if(trackBar2.Value == 4) { value = 2; speed.Text = "2"; }
                 player.settings.rate = value;
 
             }
