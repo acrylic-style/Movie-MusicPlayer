@@ -317,7 +317,7 @@ namespace Video_MusicPlayer
             try
             {
                
-                double value = Double.Parse(speed.Text);
+                double value = double.Parse(speed.Text);
                 if(trackBar2.Value == 0) { value = 0.75; speed.Text = "0.75"; }
                 if(trackBar2.Value == 1) { value = 1; speed.Text = "1"; }
                 if(trackBar2.Value == 2) { value = 1.25; speed.Text = "1.25"; }
@@ -326,9 +326,23 @@ namespace Video_MusicPlayer
                 player.settings.rate = value;
 
             }
-            catch
+            catch(Exception e1)
             {
+                MessageBox.Show("エラーが発生しました。\n詳細情報:\n" + e1, "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
+        private void speed_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                player.settings.rate = double.Parse(speed.Text);
+            }
+
+            catch (Exception e1)
+            {
+                MessageBox.Show("エラーが発生しました。\ndouble 値を入力していますか？\n詳細情報:\n" + e1, "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                     
             }
         }
     }
