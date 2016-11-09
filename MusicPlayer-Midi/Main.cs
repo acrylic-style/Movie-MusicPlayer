@@ -334,15 +334,19 @@ namespace Video_MusicPlayer
 
         private void speed_TextChanged(object sender, EventArgs e)
         {
-            try
+            if (speed.Text != "")
             {
-                player.settings.rate = double.Parse(speed.Text);
-            }
+                try
+                {
+                    player.settings.rate = double.Parse(speed.Text);
+                }
 
-            catch (Exception e1)
-            {
-                MessageBox.Show("エラーが発生しました。\ndouble 値を入力していますか？\n詳細情報:\n" + e1, "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                     
+                catch (Exception e1)
+                {
+
+                    MessageBox.Show("エラーが発生しました。\ndouble 値を入力していますか？\n詳細情報:\n" + e1, "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
             }
         }
     }
