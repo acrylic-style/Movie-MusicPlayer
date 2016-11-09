@@ -406,7 +406,7 @@
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button4);
             this.Name = "Form1";
-            this.Text = "ビデオ/ミュージックプレーヤー";
+            this.Text = "Video/MusicPlayer";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
