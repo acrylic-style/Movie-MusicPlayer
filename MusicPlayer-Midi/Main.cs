@@ -132,7 +132,7 @@ namespace Video_MusicPlayer
                 button7.Enabled = true;
                 button2.Enabled = true;
                 button3.Enabled = true;
-                trackBar1.Enabled = true;
+                trackBar2.Enabled = true;
                 button9.Enabled = true;
                 button10.Enabled = true;
                 button11.Enabled = true;
@@ -163,7 +163,7 @@ namespace Video_MusicPlayer
             button8.Enabled = false;
             button2.Enabled = false;
             button3.Enabled = false;
-            trackBar1.Enabled = false;
+            trackBar2.Enabled = false;
             button9.Enabled = false;
             button10.Enabled = false;
             button11.Enabled = false;
