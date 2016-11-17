@@ -366,6 +366,7 @@
             this.speed.Name = "speed";
             this.speed.Size = new System.Drawing.Size(69, 19);
             this.speed.TabIndex = 36;
+            this.speed.Text = "1";
             this.speed.TextChanged += new System.EventHandler(this.speed_TextChanged);
             // 
             // Form1
