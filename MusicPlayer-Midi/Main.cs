@@ -103,6 +103,9 @@ namespace Video_MusicPlayer
                 d.InitialDirectory = textBox2.Text;
             }
             d.Title = "ファイルを選択";
+
+            player.currentPlaylist.appendItem(player.newMedia(""));
+
             d.SupportMultiDottedExtensions = true;
             d.FilterIndex = 1;
             d.Filter =
@@ -347,6 +350,30 @@ namespace Video_MusicPlayer
                     MessageBox.Show("エラーが発生しました。\ndouble 値を入力していますか？\n詳細情報:\n" + e1, "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
+            }
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog d = new OpenFileDialog();
+            d.Reset(); // initial dialog box
+            if (textBox2.Text == "ここに↑の初期フォルダーを入力してください, わからない方はそのままで")
+            {
+                d.InitialDirectory = "C:\\Users\\" + Environment.UserName + "\\Desktop";
+            }
+            else
+            {
+                d.InitialDirectory = textBox2.Text;
+            }
+            d.Title = "ファイルを選択";
+            
+            d.SupportMultiDottedExtensions = true;
+            d.FilterIndex = 1;
+            d.Filter =
+    "全てのサポートされるタイプ(*.wav;*.wave;*.midi;*.mid;*.mp3;*.mpg;*.midi;*.mid;*.m4a;*.avi;*.mp4;*.mpeg;*.ogg;*.vob;*.mov;*.wma;*.asf;*.asx;*.wax;*.wm;*.wmv;*.wvx;*.rmi;*.cda;*.mkv)|*.wav;*.wave;*.midi;*.mid;*.mp3;*.mpg;*.midi;*.mid;*.m4a;*.avi;*.mp4;*.mpeg;*.ogg;*.vob;*.mov;*.wma;*.asf;*.asx;*.wax;*.wm;*.wmv;*.wvx;*.rmi;*.cda;*.mkv|すべてのファイル(*.*)|*.*";
+            if (d.ShowDialog() == DialogResult.OK)
+            {
+                player.currentPlaylist.appendItem(player.newMedia(d.FileName));
             }
         }
     }

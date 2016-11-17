@@ -60,6 +60,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.speed = new System.Windows.Forms.TextBox();
+            this.button12 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
@@ -294,7 +295,7 @@
             // 
             // trackBar2
             // 
-            this.trackBar2.Location = new System.Drawing.Point(0, 100);
+            this.trackBar2.Location = new System.Drawing.Point(2, 90);
             this.trackBar2.Maximum = 4;
             this.trackBar2.Name = "trackBar2";
             this.trackBar2.Size = new System.Drawing.Size(732, 45);
@@ -369,11 +370,22 @@
             this.speed.Text = "1";
             this.speed.TextChanged += new System.EventHandler(this.speed_TextChanged);
             // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(674, 32);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(52, 52);
+            this.button12.TabIndex = 37;
+            this.button12.Text = "次の曲を追加";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 638);
+            this.Controls.Add(this.button12);
             this.Controls.Add(this.speed);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -448,6 +460,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox speed;
+        private System.Windows.Forms.Button button12;
     }
 }
 
