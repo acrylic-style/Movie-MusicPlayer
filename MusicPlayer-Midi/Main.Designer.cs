@@ -372,11 +372,12 @@
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(674, 32);
+            this.button12.Enabled = false;
+            this.button12.Location = new System.Drawing.Point(588, 71);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(52, 52);
+            this.button12.Size = new System.Drawing.Size(144, 21);
             this.button12.TabIndex = 37;
-            this.button12.Text = "次の曲を追加";
+            this.button12.Text = "次の曲を追加(使用不可)";
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
