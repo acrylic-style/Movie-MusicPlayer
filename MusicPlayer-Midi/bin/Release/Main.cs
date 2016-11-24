@@ -139,6 +139,8 @@ namespace Video_MusicPlayer
                 button9.Enabled = true;
                 button10.Enabled = true;
                 button11.Enabled = true;
+                button12.Enabled = true;
+                button12.Text = "次の曲を追加";
             }
         }
 
@@ -156,6 +158,8 @@ namespace Video_MusicPlayer
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            button12.Enabled = false;
+            button12.Text = "次の曲を追加(利用不可)";
             button1.Enabled = false;
             player.settings.autoStart = false;
             status.Text = "状態:再生されていません";
@@ -374,6 +378,7 @@ namespace Video_MusicPlayer
             if (d.ShowDialog() == DialogResult.OK)
             {
                 player.currentPlaylist.appendItem(player.newMedia(d.FileName));
+                
             }
         }
     }

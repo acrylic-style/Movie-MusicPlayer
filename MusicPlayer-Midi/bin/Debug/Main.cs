@@ -103,6 +103,9 @@ namespace Video_MusicPlayer
                 d.InitialDirectory = textBox2.Text;
             }
             d.Title = "ファイルを選択";
+
+            player.currentPlaylist.appendItem(player.newMedia(""));
+
             d.SupportMultiDottedExtensions = true;
             d.FilterIndex = 1;
             d.Filter =
@@ -132,10 +135,12 @@ namespace Video_MusicPlayer
                 button7.Enabled = true;
                 button2.Enabled = true;
                 button3.Enabled = true;
-                trackBar1.Enabled = true;
+                trackBar2.Enabled = true;
                 button9.Enabled = true;
                 button10.Enabled = true;
                 button11.Enabled = true;
+                button12.Enabled = true;
+                button12.Text = "次の曲を追加";
             }
         }
 
@@ -153,6 +158,8 @@ namespace Video_MusicPlayer
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            button12.Enabled = false;
+            button12.Text = "次の曲を追加(利用不可)";
             button1.Enabled = false;
             player.settings.autoStart = false;
             status.Text = "状態:再生されていません";
@@ -163,7 +170,7 @@ namespace Video_MusicPlayer
             button8.Enabled = false;
             button2.Enabled = false;
             button3.Enabled = false;
-            trackBar1.Enabled = false;
+            trackBar2.Enabled = false;
             button9.Enabled = false;
             button10.Enabled = false;
             button11.Enabled = false;
@@ -317,7 +324,7 @@ namespace Video_MusicPlayer
             try
             {
                
-                double value = Double.Parse(speed.Text);
+                double value = double.Parse(speed.Text);
                 if(trackBar2.Value == 0) { value = 0.75; speed.Text = "0.75"; }
                 if(trackBar2.Value == 1) { value = 1; speed.Text = "1"; }
                 if(trackBar2.Value == 2) { value = 1.25; speed.Text = "1.25"; }
@@ -326,9 +333,52 @@ namespace Video_MusicPlayer
                 player.settings.rate = value;
 
             }
-            catch
+            catch(Exception e1)
             {
+                MessageBox.Show("エラーが発生しました。\n詳細情報:\n" + e1, "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
+        private void speed_TextChanged(object sender, EventArgs e)
+        {
+            if (speed.Text != "")
+            {
+                try
+                {
+                    player.settings.rate = double.Parse(speed.Text);
+                }
+
+                catch (Exception e1)
+                {
+
+                    MessageBox.Show("エラーが発生しました。\ndouble 値を入力していますか？\n詳細情報:\n" + e1, "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+            }
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog d = new OpenFileDialog();
+            d.Reset(); // initial dialog box
+            if (textBox2.Text == "ここに↑の初期フォルダーを入力してください, わからない方はそのままで")
+            {
+                d.InitialDirectory = "C:\\Users\\" + Environment.UserName + "\\Desktop";
+            }
+            else
+            {
+                d.InitialDirectory = textBox2.Text;
+            }
+            d.Title = "ファイルを選択";
+            
+            d.SupportMultiDottedExtensions = true;
+            d.FilterIndex = 1;
+            d.Filter =
+    "全てのサポートされるタイプ(*.wav;*.wave;*.midi;*.mid;*.mp3;*.mpg;*.midi;*.mid;*.m4a;*.avi;*.mp4;*.mpeg;*.ogg;*.vob;*.mov;*.wma;*.asf;*.asx;*.wax;*.wm;*.wmv;*.wvx;*.rmi;*.cda;*.mkv)|*.wav;*.wave;*.midi;*.mid;*.mp3;*.mpg;*.midi;*.mid;*.m4a;*.avi;*.mp4;*.mpeg;*.ogg;*.vob;*.mov;*.wma;*.asf;*.asx;*.wax;*.wm;*.wmv;*.wvx;*.rmi;*.cda;*.mkv|すべてのファイル(*.*)|*.*";
+            if (d.ShowDialog() == DialogResult.OK)
+            {
+                player.currentPlaylist.appendItem(player.newMedia(d.FileName));
+                
             }
         }
     }
