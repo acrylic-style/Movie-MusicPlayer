@@ -174,6 +174,20 @@ namespace Video_MusicPlayer
             button9.Enabled = false;
             button10.Enabled = false;
             button11.Enabled = false;
+
+            
+        }
+
+        public void MediaChangedEvent(object sender, EventArgs e)
+        {
+            player.CurrentItemChange += Player_CurrentItemChange;
+        }
+
+        private void Player_CurrentItemChange(object sender, AxWMPLib._WMPOCXEvents_CurrentItemChangeEvent e)
+        {
+            //throw new NotImplementedException();
+            // Not Implemented!
+            
         }
 
         private void button6_Click(object sender, EventArgs e)
