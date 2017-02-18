@@ -109,7 +109,7 @@ namespace Video_MusicPlayer
             d.SupportMultiDottedExtensions = true;
             d.FilterIndex = 1;
             d.Filter =
-    "全てのサポートされるタイプ(*.wav;*.wave;*.midi;*.mid;*.mp3;*.mpg;*.midi;*.mid;*.m4a;*.avi;*.mp4;*.mpeg;*.ogg;*.vob;*.mov;*.wma;*.asf;*.asx;*.wax;*.wm;*.wmv;*.wvx;*.rmi;*.cda;*.mkv)|*.wav;*.wave;*.midi;*.mid;*.mp3;*.mpg;*.midi;*.mid;*.m4a;*.avi;*.mp4;*.mpeg;*.ogg;*.vob;*.mov;*.wma;*.asf;*.asx;*.wax;*.wm;*.wmv;*.wvx;*.rmi;*.cda;*.mkv|すべてのファイル(*.*)|*.*";
+    "全てのサポートされるタイプ(*.mod;*.wav;*.wave;*.midi;*.mid;*.mp3;*.mpg;*.midi;*.mid;*.m4a;*.avi;*.mp4;*.mpeg;*.ogg;*.vob;*.mov;*.wma;*.asf;*.asx;*.wax;*.wm;*.wmv;*.wvx;*.rmi;*.cda;*.mkv)|*.mod;*.wav;*.wave;*.midi;*.mid;*.mp3;*.mpg;*.midi;*.mid;*.m4a;*.avi;*.mp4;*.mpeg;*.ogg;*.vob;*.mov;*.wma;*.asf;*.asx;*.wax;*.wm;*.wmv;*.wvx;*.rmi;*.cda;*.mkv|すべてのファイル(*.*)|*.*";
             if (d.ShowDialog() == DialogResult.OK)
             {
                 textBox1.Text = d.FileName;
@@ -130,17 +130,17 @@ namespace Video_MusicPlayer
 
             if (textBox1.Text != null)
             {
-                button1.Enabled = true;
-                button8.Enabled = true;
-                button7.Enabled = true;
-                button2.Enabled = true;
-                button3.Enabled = true;
+                OpenMediaPlayer.Enabled = true;
+                Fast.Enabled = true;
+                Slow.Enabled = true;
+                Play.Enabled = true;
+                Stop.Enabled = true;
                 trackBar2.Enabled = true;
-                button9.Enabled = true;
-                button10.Enabled = true;
-                button11.Enabled = true;
-                button12.Enabled = true;
-                button12.Text = "次の曲を追加";
+                Pause.Enabled = true;
+                Back.Enabled = true;
+                Next.Enabled = true;
+                AddNextMedia.Enabled = true;
+                AddNextMedia.Text = "次の曲を追加";
             }
         }
 
@@ -158,22 +158,36 @@ namespace Video_MusicPlayer
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            button12.Enabled = false;
-            button12.Text = "次の曲を追加(利用不可)";
-            button1.Enabled = false;
+            AddNextMedia.Enabled = false;
+            AddNextMedia.Text = "次のメディアを追加";
+            OpenMediaPlayer.Enabled = false;
             player.settings.autoStart = false;
             status.Text = "状態:再生されていません";
             player.settings.volume = 100;
             textBox2.Text = "ここに↑の初期フォルダーを入力してください, わからない方はそのままで";
 
-            button7.Enabled = false;
-            button8.Enabled = false;
-            button2.Enabled = false;
-            button3.Enabled = false;
+            Slow.Enabled = false;
+            Fast.Enabled = false;
+            Play.Enabled = false;
+            Stop.Enabled = false;
             trackBar2.Enabled = false;
-            button9.Enabled = false;
-            button10.Enabled = false;
-            button11.Enabled = false;
+            Pause.Enabled = false;
+            Back.Enabled = false;
+            Next.Enabled = false;
+
+            
+        }
+
+        public void MediaChangedEvent(object sender, EventArgs e)
+        {
+            player.CurrentItemChange += Player_CurrentItemChange;
+        }
+
+        private void Player_CurrentItemChange(object sender, AxWMPLib._WMPOCXEvents_CurrentItemChangeEvent e)
+        {
+            //throw new NotImplementedException();
+            // Not Implemented!
+            
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -196,18 +210,24 @@ namespace Video_MusicPlayer
             }
             catch
             {
-                MessageBox.Show("このシステムによって、このコンピュータは\"CommonOpenFileDialog(Microsoft.WindowsAPICodePack[-Core,-Shell])\"が使用できないことが検出されました。\n代わりに\"FolderBrowserDialog\"を開きます。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                FolderBrowserDialog d = new FolderBrowserDialog();
-                d.Description = "フォルダを指定してください。";
-                d.RootFolder = Environment.SpecialFolder.CommonDesktopDirectory;
-                d.SelectedPath = default_dir;
-                d.ShowNewFolderButton = true;
-                if (d.ShowDialog(this) == DialogResult.OK)
+                try
                 {
-                    textBox2.Text = d.SelectedPath;
+                    MessageBox.Show("システムによって、このコンピュータは\"CommonOpenFileDialog(Microsoft.WindowsAPICodePack[-Core,-Shell])\"が使用できないことが検出されました。\n代わりに\"FolderBrowserDialog\"を開きます。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    FolderBrowserDialog d = new FolderBrowserDialog();
+                    d.Description = "フォルダを指定してください。";
+                    d.RootFolder = Environment.SpecialFolder.CommonDesktopDirectory;
+                    d.SelectedPath = default_dir;
+                    d.ShowNewFolderButton = true;
+                    if (d.ShowDialog(this) == DialogResult.OK)
+                    {
+                        textBox2.Text = d.SelectedPath;
+                    }
+                    d.Dispose();
                 }
-                d.Dispose();
-
+                catch
+                {
+                    MessageBox.Show("不明なエラーが発生しました。", "不明なエラーが発生しました。", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -290,7 +310,7 @@ namespace Video_MusicPlayer
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            player.settings.volume = trackBar1.Value;
+            player.settings.volume = Volume.Value;
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -357,7 +377,7 @@ namespace Video_MusicPlayer
             }
         }
 
-        private void button12_Click(object sender, EventArgs e)
+        private void button_13(object sender, EventArgs e)
         {
             OpenFileDialog d = new OpenFileDialog();
             d.Reset(); // initial dialog box
@@ -372,14 +392,22 @@ namespace Video_MusicPlayer
             d.Title = "ファイルを選択";
             
             d.SupportMultiDottedExtensions = true;
+            d.Multiselect = true;
             d.FilterIndex = 1;
             d.Filter =
     "全てのサポートされるタイプ(*.wav;*.wave;*.midi;*.mid;*.mp3;*.mpg;*.midi;*.mid;*.m4a;*.avi;*.mp4;*.mpeg;*.ogg;*.vob;*.mov;*.wma;*.asf;*.asx;*.wax;*.wm;*.wmv;*.wvx;*.rmi;*.cda;*.mkv)|*.wav;*.wave;*.midi;*.mid;*.mp3;*.mpg;*.midi;*.mid;*.m4a;*.avi;*.mp4;*.mpeg;*.ogg;*.vob;*.mov;*.wma;*.asf;*.asx;*.wax;*.wm;*.wmv;*.wvx;*.rmi;*.cda;*.mkv|すべてのファイル(*.*)|*.*";
             if (d.ShowDialog() == DialogResult.OK)
             {
-                player.currentPlaylist.appendItem(player.newMedia(d.FileName));
-                
+                foreach (string array in d.FileNames)
+                {
+                    player.currentPlaylist.appendItem(player.newMedia(array));
+                }
             }
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            player.currentPlaylist.removeItem(player.currentMedia);
         }
     }
 }

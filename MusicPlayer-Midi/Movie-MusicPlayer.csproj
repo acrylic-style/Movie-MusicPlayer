@@ -7,14 +7,14 @@
     <ProjectGuid>{E8110FF8-DEEA-4C99-92DF-C6EEA4E80067}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Video_MusicPlayer</RootNamespace>
-    <AssemblyName>Video-MusicPlayer</AssemblyName>
+    <RootNamespace>Movie_MusicPlayer</RootNamespace>
+    <AssemblyName>Movie-MusicPlayer</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
-    <PublishUrl>C:\Users\frand\Source\Repos\Movie-MusicPlayer\InstallData\</PublishUrl>
+    <PublishUrl>C:\Users\Owner\Source\Repos\s\Movie-MusicPlayer\InstallData\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -29,8 +29,8 @@
     <SuiteName>MovieAndMusicPlayer</SuiteName>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <TrustUrlParameters>true</TrustUrlParameters>
-    <ApplicationRevision>29</ApplicationRevision>
-    <ApplicationVersion>1.3.1.%2a</ApplicationVersion>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.3.2.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>

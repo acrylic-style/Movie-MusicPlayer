@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.button4 = new System.Windows.Forms.Button();
+            this.CloseButton = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button5 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -39,16 +39,16 @@
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.player = new AxWMPLib.AxWindowsMediaPlayer();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.OpenMediaPlayer = new System.Windows.Forms.Button();
+            this.Play = new System.Windows.Forms.Button();
+            this.Stop = new System.Windows.Forms.Button();
+            this.Slow = new System.Windows.Forms.Button();
+            this.Volume = new System.Windows.Forms.TrackBar();
             this.label1 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
+            this.Fast = new System.Windows.Forms.Button();
+            this.Pause = new System.Windows.Forms.Button();
+            this.Back = new System.Windows.Forms.Button();
+            this.Next = new System.Windows.Forms.Button();
             this.status = new System.Windows.Forms.Label();
             this.name = new System.Windows.Forms.Label();
             this.url = new System.Windows.Forms.Label();
@@ -60,22 +60,22 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.speed = new System.Windows.Forms.TextBox();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
+            this.AddNextMedia = new System.Windows.Forms.Button();
+            this.RemoteCurrentMedia = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Volume)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             this.SuspendLayout();
             // 
-            // button4
+            // CloseButton
             // 
-            this.button4.Location = new System.Drawing.Point(539, 231);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(51, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "閉じる";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.CloseButton.Location = new System.Drawing.Point(539, 231);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(51, 23);
+            this.CloseButton.TabIndex = 3;
+            this.CloseButton.Text = "閉じる";
+            this.CloseButton.UseVisualStyleBackColor = true;
+            this.CloseButton.Click += new System.EventHandler(this.button4_Click);
             // 
             // checkBox1
             // 
@@ -167,55 +167,55 @@
             this.linkLabel1.Text = "↓テスト中↓";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // button1
+            // OpenMediaPlayer
             // 
-            this.button1.Location = new System.Drawing.Point(521, 212);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 21);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "WindowsMediaPlayer";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_3);
+            this.OpenMediaPlayer.Location = new System.Drawing.Point(521, 212);
+            this.OpenMediaPlayer.Name = "OpenMediaPlayer";
+            this.OpenMediaPlayer.Size = new System.Drawing.Size(130, 21);
+            this.OpenMediaPlayer.TabIndex = 15;
+            this.OpenMediaPlayer.Text = "WindowsMediaPlayer";
+            this.OpenMediaPlayer.UseVisualStyleBackColor = true;
+            this.OpenMediaPlayer.Click += new System.EventHandler(this.button1_Click_3);
             // 
-            // button2
+            // Play
             // 
-            this.button2.Location = new System.Drawing.Point(10, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "再生";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.Play.Location = new System.Drawing.Point(10, 3);
+            this.Play.Name = "Play";
+            this.Play.Size = new System.Drawing.Size(75, 23);
+            this.Play.TabIndex = 16;
+            this.Play.Text = "再生";
+            this.Play.UseVisualStyleBackColor = true;
+            this.Play.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // Stop
             // 
-            this.button3.Location = new System.Drawing.Point(172, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "停止";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.Stop.Location = new System.Drawing.Point(172, 3);
+            this.Stop.Name = "Stop";
+            this.Stop.Size = new System.Drawing.Size(75, 23);
+            this.Stop.TabIndex = 17;
+            this.Stop.Text = "停止";
+            this.Stop.UseVisualStyleBackColor = true;
+            this.Stop.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button7
+            // Slow
             // 
-            this.button7.Location = new System.Drawing.Point(334, 3);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 18;
-            this.button7.Text = "早送り≫";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.Slow.Location = new System.Drawing.Point(334, 3);
+            this.Slow.Name = "Slow";
+            this.Slow.Size = new System.Drawing.Size(75, 23);
+            this.Slow.TabIndex = 18;
+            this.Slow.Text = "早送り≫";
+            this.Slow.UseVisualStyleBackColor = true;
+            this.Slow.Click += new System.EventHandler(this.button7_Click);
             // 
-            // trackBar1
+            // Volume
             // 
-            this.trackBar1.Location = new System.Drawing.Point(0, 163);
-            this.trackBar1.Maximum = 100;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(734, 45);
-            this.trackBar1.TabIndex = 19;
-            this.trackBar1.Value = 100;
-            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            this.Volume.Location = new System.Drawing.Point(0, 163);
+            this.Volume.Maximum = 100;
+            this.Volume.Name = "Volume";
+            this.Volume.Size = new System.Drawing.Size(734, 45);
+            this.Volume.TabIndex = 19;
+            this.Volume.Value = 100;
+            this.Volume.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // label1
             // 
@@ -227,45 +227,45 @@
             this.label1.TabIndex = 20;
             this.label1.Text = "↓音量↓　↑2倍速↑";
             // 
-            // button8
+            // Fast
             // 
-            this.button8.Location = new System.Drawing.Point(253, 3);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 21;
-            this.button8.Text = "≪早戻し";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.Fast.Location = new System.Drawing.Point(253, 3);
+            this.Fast.Name = "Fast";
+            this.Fast.Size = new System.Drawing.Size(75, 23);
+            this.Fast.TabIndex = 21;
+            this.Fast.Text = "≪早戻し";
+            this.Fast.UseVisualStyleBackColor = true;
+            this.Fast.Click += new System.EventHandler(this.button8_Click);
             // 
-            // button9
+            // Pause
             // 
-            this.button9.Location = new System.Drawing.Point(91, 3);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
-            this.button9.TabIndex = 22;
-            this.button9.Text = "一時停止";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.Pause.Location = new System.Drawing.Point(91, 3);
+            this.Pause.Name = "Pause";
+            this.Pause.Size = new System.Drawing.Size(75, 23);
+            this.Pause.TabIndex = 22;
+            this.Pause.Text = "一時停止";
+            this.Pause.UseVisualStyleBackColor = true;
+            this.Pause.Click += new System.EventHandler(this.button9_Click);
             // 
-            // button10
+            // Back
             // 
-            this.button10.Location = new System.Drawing.Point(415, 3);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 23);
-            this.button10.TabIndex = 23;
-            this.button10.Text = "戻す";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.Back.Location = new System.Drawing.Point(415, 3);
+            this.Back.Name = "Back";
+            this.Back.Size = new System.Drawing.Size(75, 23);
+            this.Back.TabIndex = 23;
+            this.Back.Text = "戻す";
+            this.Back.UseVisualStyleBackColor = true;
+            this.Back.Click += new System.EventHandler(this.button10_Click);
             // 
-            // button11
+            // Next
             // 
-            this.button11.Location = new System.Drawing.Point(496, 3);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 23);
-            this.button11.TabIndex = 24;
-            this.button11.Text = "次へ";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
+            this.Next.Location = new System.Drawing.Point(496, 3);
+            this.Next.Name = "Next";
+            this.Next.Size = new System.Drawing.Size(75, 23);
+            this.Next.TabIndex = 24;
+            this.Next.Text = "次へ";
+            this.Next.UseVisualStyleBackColor = true;
+            this.Next.Click += new System.EventHandler(this.button11_Click);
             // 
             // status
             // 
@@ -371,33 +371,33 @@
             this.speed.Text = "1";
             this.speed.TextChanged += new System.EventHandler(this.speed_TextChanged);
             // 
-            // button12
+            // AddNextMedia
             // 
-            this.button12.Location = new System.Drawing.Point(588, 71);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(144, 21);
-            this.button12.TabIndex = 37;
-            this.button12.Text = "次の曲を追加";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
+            this.AddNextMedia.Location = new System.Drawing.Point(588, 71);
+            this.AddNextMedia.Name = "AddNextMedia";
+            this.AddNextMedia.Size = new System.Drawing.Size(144, 21);
+            this.AddNextMedia.TabIndex = 37;
+            this.AddNextMedia.Text = "次のメディアを追加";
+            this.AddNextMedia.UseVisualStyleBackColor = true;
+            this.AddNextMedia.Click += new System.EventHandler(this.button_13);
             // 
-            // button13
+            // RemoteCurrentMedia
             // 
-            this.button13.Location = new System.Drawing.Point(588, 42);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(144, 23);
-            this.button13.TabIndex = 38;
-            this.button13.Text = "追加した曲を削除する";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
+            this.RemoteCurrentMedia.Location = new System.Drawing.Point(588, 42);
+            this.RemoteCurrentMedia.Name = "RemoteCurrentMedia";
+            this.RemoteCurrentMedia.Size = new System.Drawing.Size(144, 23);
+            this.RemoteCurrentMedia.TabIndex = 38;
+            this.RemoteCurrentMedia.Text = "現在のメディアを削除する";
+            this.RemoteCurrentMedia.UseVisualStyleBackColor = true;
+            this.RemoteCurrentMedia.Click += new System.EventHandler(this.button13_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 638);
-            this.Controls.Add(this.button13);
-            this.Controls.Add(this.button12);
+            this.Controls.Add(this.RemoteCurrentMedia);
+            this.Controls.Add(this.AddNextMedia);
             this.Controls.Add(this.speed);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -409,16 +409,16 @@
             this.Controls.Add(this.url);
             this.Controls.Add(this.name);
             this.Controls.Add(this.status);
-            this.Controls.Add(this.button11);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
+            this.Controls.Add(this.Next);
+            this.Controls.Add(this.Back);
+            this.Controls.Add(this.Pause);
+            this.Controls.Add(this.Fast);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.trackBar1);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Volume);
+            this.Controls.Add(this.Slow);
+            this.Controls.Add(this.Stop);
+            this.Controls.Add(this.Play);
+            this.Controls.Add(this.OpenMediaPlayer);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.player);
             this.Controls.Add(this.checkBox3);
@@ -428,12 +428,12 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.CloseButton);
             this.Name = "Form1";
             this.Text = "Video/MusicPlayer";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Volume)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -441,7 +441,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button CloseButton;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox textBox1;
@@ -451,16 +451,16 @@
         private System.Windows.Forms.CheckBox checkBox3;
         private AxWMPLib.AxWindowsMediaPlayer player;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.Button OpenMediaPlayer;
+        private System.Windows.Forms.Button Play;
+        private System.Windows.Forms.Button Stop;
+        private System.Windows.Forms.Button Slow;
+        private System.Windows.Forms.TrackBar Volume;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button Fast;
+        private System.Windows.Forms.Button Pause;
+        private System.Windows.Forms.Button Back;
+        private System.Windows.Forms.Button Next;
         private System.Windows.Forms.Label status;
         private System.Windows.Forms.Label name;
         private System.Windows.Forms.Label url;
@@ -472,8 +472,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox speed;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button AddNextMedia;
+        private System.Windows.Forms.Button RemoteCurrentMedia;
     }
 }
 

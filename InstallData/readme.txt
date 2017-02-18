@@ -1,8 +1,8 @@
 setup.exe でセットアップしてからご使用ください。
 
 必要なコンポーネント:
-Microsoft .NET Framework 4.6.2 Preview ( Microsoft .NET Framework 4.6.2 Preview Runtime )
-なお、Microsoft .NET Framework 4.6.2 Preview から上のバージョン以外では動作しません。
+Microsoft .NET Framework 4.6.2 ( Microsoft .NET Framework 4.6.2 )
+なお、Microsoft .NET Framework 4.6.2 から上のバージョン以外では動作しません。
 
 Wiki: https://github.com/rht0910/Movie-MusicPlayer/wiki
 

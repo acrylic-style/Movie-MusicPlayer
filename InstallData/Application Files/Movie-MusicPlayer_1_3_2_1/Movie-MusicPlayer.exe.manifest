@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="Video-MusicPlayer.exe" version="1.3.1.28" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="Movie-MusicPlayer.exe" version="1.3.2.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="Video-MusicPlayer" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
-    <commandLine file="Video-MusicPlayer.exe" parameters="" />
+    <assemblyIdentity name="Movie-MusicPlayer" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="Movie-MusicPlayer.exe" parameters="" />
   </entryPoint>
   <trustInfo>
     <security>
@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>1Jg7GPIabnM+33soWJWKSOE+ZnMBCqq0ia48V25+RXE=</dsig:DigestValue>
+        <dsig:DigestValue>FKPCiLayQ9k5ppZH7UcWQ2XFcPGAMbxdZ0Awg2Xc7PU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,7 +61,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>8elfi/DbRupv4B8ifTSezOs7abRJDRDpBTzA74Paq8s=</dsig:DigestValue>
+        <dsig:DigestValue>/MejLDCqFte7JmeLFm0pQIeWhfpsqBMIpHFEB1NXL8w=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -102,18 +102,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Video-MusicPlayer.exe" size="24576">
-      <assemblyIdentity name="Video-MusicPlayer" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Movie-MusicPlayer.exe" size="23552">
+      <assemblyIdentity name="Movie-MusicPlayer" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>1HcAywzXASKntWK8K/P6xoRrpkqMx9jTMHSAiBsl8jQ=</dsig:DigestValue>
+        <dsig:DigestValue>JbrS6TWwDLeHXjX3s5AQNxzgFCY9Qya3dNIcebqDX1I=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Video-MusicPlayer.exe.config" size="1252">
+  <file name="Movie-MusicPlayer.exe.config" size="1252">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
