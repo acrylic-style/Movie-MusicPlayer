@@ -7,4 +7,4 @@
 
 ![ ](https://acrylic-style.is-inside.me/NsTG0AZQ.PNG)
 
-- Need help? Ask me! Use [email](mailto:me@acrylicstyle.xyz) or Discord(`who am i#5837`).
+- Need help? Ask me! Use [email](mailto:me@acrylicstyle.xyz) or Discord(`lost#5837`).
