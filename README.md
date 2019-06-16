@@ -1,17 +1,10 @@
-# Movie-MusicPlayer
-new MusicPlayer!
+# MusicPlayer
 
-Please visit page: https://github.com/rht0910/Movie-MusicPlayer/wiki/Home
-... Wiki is old.
+- C# [**Pure 101%**](https://osu.ppy.sh/beatmapsets/327557#osu/1087334).
+- Only supports [**Japanese**](https://www.google.com/search?q=japanese&hl=en).
+- Maybe coming English...(and delete japanese)?
+- You can use [**Discord**](https://discordapp.com) for cool feature(see image).
 
+![ ](https://acrylic-style.is-inside.me/NsTG0AZQ.PNG)
 
-Program creating environment: Microsoft Visual Studio 2017 Community, .NET Framework 4.6.2
-
-This Program language is C# 100%.
-
----- japanese only. ----
-
-mp3ファイルや、m4aファイルなど、対応している形式であれば、このアプリでも再生が可能です。(mp4やaviなど)
-
-現在Wikiは古い状態です。
-
+- Need help? Ask me! Use [email](mailto:me@acrylicstyle.xyz) or Discord(`lost#5837`).
