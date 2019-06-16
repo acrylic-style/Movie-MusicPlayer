@@ -30,8 +30,8 @@
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
     <TrustUrlParameters>true</TrustUrlParameters>
-    <ApplicationRevision>2</ApplicationRevision>
-    <ApplicationVersion>1.5.0.%2a</ApplicationVersion>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.6.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -265,6 +265,45 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_play_circle_outline_white_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_pause_circle_outline_white_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_volume_down_white_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_skip_previous_white_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_volume_up_white_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_skip_next_white_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_volume_mute_white_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_volume_off_white_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_repeat_one_white_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_repeat_white_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_fast_rewind_white_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_fast_forward_white_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_stop_white_48dp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,15 +9,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using Microsoft.WindowsAPICodePack.Dialogs;
-
+using DiscordRPC;
+using DiscordRPC.Logging;
 
 namespace Video_MusicPlayer
 {
     public partial class Form1 : Form
     {
+        public static DiscordRpcClient client;
+
         public Form1()
         {
             InitializeComponent();
+            InitDiscordRPC();
         }
 
         [System.Runtime.InteropServices.DllImport("winmm.dll",
@@ -25,10 +29,43 @@ namespace Video_MusicPlayer
         private static extern int mciSendString(string command,
    StringBuilder buffer, int bufferSize, IntPtr hwndCallback);
 
+        public static void InitDiscordRPC()
+        {
+            client = new DiscordRpcClient("576128781211664394");
+
+            //Set the logger
+            client.Logger = new ConsoleLogger() { Level = LogLevel.Warning };
+
+            //Subscribe to events
+            client.OnReady += (sender, e) =>
+            {
+                Console.WriteLine("Received Ready from user {0}", e.User.Username);
+            };
+
+            client.OnPresenceUpdate += (sender, e) =>
+            {
+                Console.WriteLine("Received Update! {0}", e.Presence);
+            };
+
+            //Connect to the RPC
+            client.Initialize();
+
+            //Set the rich presence
+            //Call this as many times as you want and anywhere in your code.
+            client.SetPresence(new RichPresence()
+            {
+                Details = "Idle",
+                Assets = new Assets()
+                {
+                    LargeImageKey = "groove",
+                    SmallImageKey = "stop"
+                }
+            });
+        }
 
         public static int arguments(string[] args)
         {
-            
+
             AxWMPLib.AxWindowsMediaPlayer player = new AxWMPLib.AxWindowsMediaPlayer();
             if (args.Length != 1)
             {
@@ -93,15 +130,6 @@ namespace Video_MusicPlayer
         private void button5_Click(object sender, EventArgs e)
         {
             OpenFileDialog d = new OpenFileDialog();
-            d.Reset(); // initial dialog box
-            if (textBox2.Text == "ここに↑の初期フォルダーを入力してください, わからない方はそのままで")
-            {
-                d.InitialDirectory = "C:\\Users\\" + Environment.UserName + "\\Desktop";
-            }
-            else
-            {
-                d.InitialDirectory = textBox2.Text;
-            }
             d.Title = "ファイルを選択";
 
             player.currentPlaylist.appendItem(player.newMedia(""));
@@ -119,15 +147,7 @@ namespace Video_MusicPlayer
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                player.URL = textBox1.Text;
-            }
-            catch (Exception exp)
-            {
-                MessageBox.Show("テキストボックスの中が不正な値のため、操作に失敗しました。詳細情報：" + exp, "エラーが発生しました", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
+            player.URL = textBox1.Text;
             if (textBox1.Text != null)
             {
                 OpenMediaPlayer.Enabled = true;
@@ -162,7 +182,7 @@ namespace Video_MusicPlayer
             AddNextMedia.Text = "次のメディアを追加";
             OpenMediaPlayer.Enabled = false;
             player.settings.autoStart = false;
-            status.Text = "状態:再生されていません";
+            status.Text = "状態: 再生されていません";
             player.settings.volume = 100;
             textBox2.Text = "ここに↑の初期フォルダーを入力してください, わからない方はそのままで";
 
@@ -175,7 +195,7 @@ namespace Video_MusicPlayer
             Back.Enabled = false;
             Next.Enabled = false;
 
-            
+
         }
 
         public void MediaChangedEvent(object sender, EventArgs e)
@@ -187,7 +207,7 @@ namespace Video_MusicPlayer
         {
             //throw new NotImplementedException();
             // Not Implemented!
-            
+
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -212,7 +232,6 @@ namespace Video_MusicPlayer
             {
                 try
                 {
-                    MessageBox.Show("システムによって、このコンピュータは\"CommonOpenFileDialog(Microsoft.WindowsAPICodePack[-Core,-Shell])\"が使用できないことが検出されました。\n代わりに\"FolderBrowserDialog\"を開きます。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     FolderBrowserDialog d = new FolderBrowserDialog();
                     d.Description = "フォルダを指定してください。";
                     d.RootFolder = Environment.SpecialFolder.CommonDesktopDirectory;
@@ -226,7 +245,7 @@ namespace Video_MusicPlayer
                 }
                 catch
                 {
-                    MessageBox.Show("不明なエラーが発生しました。", "不明なエラーが発生しました。", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("不明なエラーが発生しました。", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -234,13 +253,13 @@ namespace Video_MusicPlayer
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            
-            
+
+
         }
 
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
-            if(checkBox3.Enabled == true)
+            if (checkBox3.Enabled == true)
             {
                 this.TopMost = !this.TopMost;
             }
@@ -251,19 +270,14 @@ namespace Video_MusicPlayer
             player.URL = textBox1.Text;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-            // Deprecated
-        }
-
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MessageBox.Show("自動再生がバグるかもしれない(このバグはなんだ?)", "WMP仕様上の注意(?)", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            MessageBox.Show("Using AxWMPLib. Bugs can happen! lol", "...", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button1_Click_3(object sender, EventArgs e)
@@ -272,7 +286,7 @@ namespace Video_MusicPlayer
             {
                 player.openPlayer(textBox1.Text);
             }
-            
+
             catch
             {
                 try
@@ -288,8 +302,13 @@ namespace Video_MusicPlayer
 
         private void button2_Click(object sender, EventArgs e)
         {
+            play();
+        }
+
+        private void play()
+        {
             player.Ctlcontrols.play();
-            if(player.status != "接続しています...")
+            if (player.status != "接続しています...")
             {
                 status.Text = "状態:" + player.status;
             }
@@ -297,13 +316,39 @@ namespace Video_MusicPlayer
             {
                 status.Text = "状態:" + player.status + " (再生ボタンを再度クリックすると正常に表示されます)";
             }
-            
+            TagLib.File file = TagLib.File.Create(player.currentMedia.sourceURL);
+            client.SetPresence(new RichPresence()
+            {
+                Details = file.Tag.Title.Length != 0 ? file.Tag.Title : player.currentMedia.sourceURL.Split('\\')[player.currentMedia.sourceURL.Split('\\').Length - 1],
+                State = "by " + (file.Tag.AlbumArtists[0].Length != 0 ? file.Tag.AlbumArtists[0]+" - " : "<?>"),
+                Assets = new Assets()
+                {
+                    LargeImageKey = "groove",
+                    LargeImageText = "Playing " + player.currentMedia.sourceURL.Split('\\')[player.currentMedia.sourceURL.Split('\\').Length - 2],
+                    SmallImageKey = "playing",
+                    SmallImageText = "Playing " + player.currentMedia.sourceURL.Split('\\')[player.currentMedia.sourceURL.Split('\\').Length - 1],
+                }
+            });
             name.Text = "名前:" + player.currentMedia.name;
             url.Text = "URL:" + player.currentMedia.sourceURL;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            stop();
+        }
+
+        private void stop()
+        {
+            client.SetPresence(new RichPresence()
+            {
+                Details = "Idle",
+                Assets = new Assets()
+                {
+                    LargeImageKey = "groove",
+                    SmallImageKey = "stop",
+                }
+            });
             player.Ctlcontrols.stop();
             status.Text = "状態:" + player.status;
         }
@@ -325,6 +370,18 @@ namespace Video_MusicPlayer
 
         private void button9_Click(object sender, EventArgs e)
         {
+            client.SetPresence(new RichPresence()
+            {
+                Details = "Playing Music ♬",
+                State = "Playing " + player.currentMedia.sourceURL.Split('\\')[player.currentMedia.sourceURL.Split('\\').Length - 1],
+                Assets = new Assets()
+                {
+                    LargeImageKey = "groove",
+                    LargeImageText = "Playing " + player.currentMedia.sourceURL.Split('\\')[player.currentMedia.sourceURL.Split('\\').Length - 2],
+                    SmallImageKey = "pause",
+                    SmallImageText = "Playing " + player.currentMedia.sourceURL.Split('\\')[player.currentMedia.sourceURL.Split('\\').Length - 1],
+                }
+            });
             player.Ctlcontrols.pause();
             status.Text = "状態:" + player.status;
         }
@@ -343,17 +400,17 @@ namespace Video_MusicPlayer
         {
             try
             {
-               
+
                 double value = double.Parse(speed.Text);
-                if(trackBar2.Value == 0) { value = 0.75; speed.Text = "0.75"; }
-                if(trackBar2.Value == 1) { value = 1; speed.Text = "1"; }
-                if(trackBar2.Value == 2) { value = 1.25; speed.Text = "1.25"; }
-                if(trackBar2.Value == 3) { value = 1.5; speed.Text = "1.5"; }
-                if(trackBar2.Value == 4) { value = 2; speed.Text = "2"; }
+                if (trackBar2.Value == 0) { value = 0.75; speed.Text = "0.75"; }
+                if (trackBar2.Value == 1) { value = 1; speed.Text = "1"; }
+                if (trackBar2.Value == 2) { value = 1.25; speed.Text = "1.25"; }
+                if (trackBar2.Value == 3) { value = 1.5; speed.Text = "1.5"; }
+                if (trackBar2.Value == 4) { value = 2; speed.Text = "2"; }
                 player.settings.rate = value;
 
             }
-            catch(Exception e1)
+            catch (Exception e1)
             {
                 MessageBox.Show("エラーが発生しました。\n詳細情報:\n" + e1, "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -390,7 +447,7 @@ namespace Video_MusicPlayer
                 d.InitialDirectory = textBox2.Text;
             }
             d.Title = "ファイルを選択";
-            
+
             d.SupportMultiDottedExtensions = true;
             d.Multiselect = true;
             d.FilterIndex = 1;
@@ -408,6 +465,23 @@ namespace Video_MusicPlayer
         private void button13_Click(object sender, EventArgs e)
         {
             player.currentPlaylist.removeItem(player.currentMedia);
+        }
+
+        private void player_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
+        {
+            switch (e.newState)
+            {
+                case (int)WMPLib.WMPPlayState.wmppsPlaying:
+                    play();
+                    break;
+
+                case (int)WMPLib.WMPPlayState.wmppsMediaEnded:
+                    stop();
+                    break;
+
+                default:
+                    break;
+            }
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Video_MusicPlayer
+namespace Video_MusicPlayer
 {
     partial class Form1
     {
@@ -69,9 +69,9 @@
             // 
             // CloseButton
             // 
-            this.CloseButton.Location = new System.Drawing.Point(539, 231);
+            this.CloseButton.Location = new System.Drawing.Point(629, 231);
             this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(51, 23);
+            this.CloseButton.Size = new System.Drawing.Size(59, 23);
             this.CloseButton.TabIndex = 3;
             this.CloseButton.Text = "閉じる";
             this.CloseButton.UseVisualStyleBackColor = true;
@@ -80,9 +80,9 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(674, 239);
+            this.checkBox1.Location = new System.Drawing.Point(774, 241);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(58, 16);
+            this.checkBox1.Size = new System.Drawing.Size(57, 16);
             this.checkBox1.TabIndex = 4;
             this.checkBox1.Text = "リピート";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -90,9 +90,9 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(496, 212);
+            this.button5.Location = new System.Drawing.Point(579, 212);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(19, 23);
+            this.button5.Size = new System.Drawing.Size(22, 23);
             this.button5.TabIndex = 6;
             this.button5.Text = "...";
             this.button5.UseVisualStyleBackColor = true;
@@ -100,16 +100,16 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(8, 214);
+            this.textBox1.Location = new System.Drawing.Point(9, 214);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(482, 19);
+            this.textBox1.Size = new System.Drawing.Size(562, 19);
             this.textBox1.TabIndex = 7;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(596, 239);
+            this.checkBox2.Location = new System.Drawing.Point(696, 241);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(72, 16);
             this.checkBox2.TabIndex = 8;
@@ -119,16 +119,16 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(8, 233);
+            this.textBox2.Location = new System.Drawing.Point(9, 233);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(427, 19);
+            this.textBox2.Size = new System.Drawing.Size(562, 19);
             this.textBox2.TabIndex = 9;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(441, 231);
+            this.button6.Location = new System.Drawing.Point(579, 233);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(19, 23);
+            this.button6.Size = new System.Drawing.Size(22, 23);
             this.button6.TabIndex = 10;
             this.button6.Text = "...";
             this.button6.UseVisualStyleBackColor = true;
@@ -137,9 +137,9 @@
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(657, 217);
+            this.checkBox3.Location = new System.Drawing.Point(774, 219);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(69, 16);
+            this.checkBox3.Size = new System.Drawing.Size(70, 16);
             this.checkBox3.TabIndex = 11;
             this.checkBox3.Text = "常に手前";
             this.checkBox3.UseVisualStyleBackColor = true;
@@ -159,19 +159,19 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(466, 240);
+            this.linkLabel1.Location = new System.Drawing.Point(607, 238);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(67, 12);
+            this.linkLabel1.Size = new System.Drawing.Size(16, 12);
             this.linkLabel1.TabIndex = 14;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "↓テスト中↓";
+            this.linkLabel1.Text = "...?";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // OpenMediaPlayer
             // 
-            this.OpenMediaPlayer.Location = new System.Drawing.Point(521, 212);
+            this.OpenMediaPlayer.Location = new System.Drawing.Point(608, 212);
             this.OpenMediaPlayer.Name = "OpenMediaPlayer";
-            this.OpenMediaPlayer.Size = new System.Drawing.Size(130, 21);
+            this.OpenMediaPlayer.Size = new System.Drawing.Size(152, 21);
             this.OpenMediaPlayer.TabIndex = 15;
             this.OpenMediaPlayer.Text = "WindowsMediaPlayer";
             this.OpenMediaPlayer.UseVisualStyleBackColor = true;
@@ -179,9 +179,9 @@
             // 
             // Play
             // 
-            this.Play.Location = new System.Drawing.Point(10, 3);
+            this.Play.Location = new System.Drawing.Point(12, 3);
             this.Play.Name = "Play";
-            this.Play.Size = new System.Drawing.Size(75, 23);
+            this.Play.Size = new System.Drawing.Size(87, 23);
             this.Play.TabIndex = 16;
             this.Play.Text = "再生";
             this.Play.UseVisualStyleBackColor = true;
@@ -189,9 +189,9 @@
             // 
             // Stop
             // 
-            this.Stop.Location = new System.Drawing.Point(172, 3);
+            this.Stop.Location = new System.Drawing.Point(201, 3);
             this.Stop.Name = "Stop";
-            this.Stop.Size = new System.Drawing.Size(75, 23);
+            this.Stop.Size = new System.Drawing.Size(87, 23);
             this.Stop.TabIndex = 17;
             this.Stop.Text = "停止";
             this.Stop.UseVisualStyleBackColor = true;
@@ -199,9 +199,9 @@
             // 
             // Slow
             // 
-            this.Slow.Location = new System.Drawing.Point(334, 3);
+            this.Slow.Location = new System.Drawing.Point(390, 3);
             this.Slow.Name = "Slow";
-            this.Slow.Size = new System.Drawing.Size(75, 23);
+            this.Slow.Size = new System.Drawing.Size(87, 23);
             this.Slow.TabIndex = 18;
             this.Slow.Text = "早送り≫";
             this.Slow.UseVisualStyleBackColor = true;
@@ -212,7 +212,7 @@
             this.Volume.Location = new System.Drawing.Point(0, 163);
             this.Volume.Maximum = 100;
             this.Volume.Name = "Volume";
-            this.Volume.Size = new System.Drawing.Size(734, 45);
+            this.Volume.Size = new System.Drawing.Size(856, 45);
             this.Volume.TabIndex = 19;
             this.Volume.Value = 100;
             this.Volume.Scroll += new System.EventHandler(this.trackBar1_Scroll);
@@ -221,7 +221,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(617, 148);
+            this.label1.Location = new System.Drawing.Point(720, 148);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 12);
             this.label1.TabIndex = 20;
@@ -229,9 +229,9 @@
             // 
             // Fast
             // 
-            this.Fast.Location = new System.Drawing.Point(253, 3);
+            this.Fast.Location = new System.Drawing.Point(295, 3);
             this.Fast.Name = "Fast";
-            this.Fast.Size = new System.Drawing.Size(75, 23);
+            this.Fast.Size = new System.Drawing.Size(87, 23);
             this.Fast.TabIndex = 21;
             this.Fast.Text = "≪早戻し";
             this.Fast.UseVisualStyleBackColor = true;
@@ -239,9 +239,9 @@
             // 
             // Pause
             // 
-            this.Pause.Location = new System.Drawing.Point(91, 3);
+            this.Pause.Location = new System.Drawing.Point(106, 3);
             this.Pause.Name = "Pause";
-            this.Pause.Size = new System.Drawing.Size(75, 23);
+            this.Pause.Size = new System.Drawing.Size(87, 23);
             this.Pause.TabIndex = 22;
             this.Pause.Text = "一時停止";
             this.Pause.UseVisualStyleBackColor = true;
@@ -249,9 +249,9 @@
             // 
             // Back
             // 
-            this.Back.Location = new System.Drawing.Point(415, 3);
+            this.Back.Location = new System.Drawing.Point(484, 3);
             this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(75, 23);
+            this.Back.Size = new System.Drawing.Size(87, 23);
             this.Back.TabIndex = 23;
             this.Back.Text = "戻す";
             this.Back.UseVisualStyleBackColor = true;
@@ -259,9 +259,9 @@
             // 
             // Next
             // 
-            this.Next.Location = new System.Drawing.Point(496, 3);
+            this.Next.Location = new System.Drawing.Point(579, 3);
             this.Next.Name = "Next";
-            this.Next.Size = new System.Drawing.Size(75, 23);
+            this.Next.Size = new System.Drawing.Size(87, 23);
             this.Next.TabIndex = 24;
             this.Next.Text = "次へ";
             this.Next.UseVisualStyleBackColor = true;
@@ -270,7 +270,7 @@
             // status
             // 
             this.status.AutoSize = true;
-            this.status.Location = new System.Drawing.Point(10, 32);
+            this.status.Location = new System.Drawing.Point(12, 32);
             this.status.Name = "status";
             this.status.Size = new System.Drawing.Size(31, 12);
             this.status.TabIndex = 25;
@@ -279,7 +279,7 @@
             // name
             // 
             this.name.AutoSize = true;
-            this.name.Location = new System.Drawing.Point(10, 54);
+            this.name.Location = new System.Drawing.Point(12, 54);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(31, 12);
             this.name.TabIndex = 26;
@@ -288,7 +288,7 @@
             // url
             // 
             this.url.AutoSize = true;
-            this.url.Location = new System.Drawing.Point(12, 75);
+            this.url.Location = new System.Drawing.Point(14, 75);
             this.url.Name = "url";
             this.url.Size = new System.Drawing.Size(29, 12);
             this.url.TabIndex = 27;
@@ -299,7 +299,7 @@
             this.trackBar2.Location = new System.Drawing.Point(2, 90);
             this.trackBar2.Maximum = 4;
             this.trackBar2.Name = "trackBar2";
-            this.trackBar2.Size = new System.Drawing.Size(732, 45);
+            this.trackBar2.Size = new System.Drawing.Size(854, 45);
             this.trackBar2.TabIndex = 28;
             this.trackBar2.Value = 1;
             this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
@@ -308,7 +308,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Blue;
-            this.label2.Location = new System.Drawing.Point(496, 148);
+            this.label2.Location = new System.Drawing.Point(579, 148);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 12);
             this.label2.TabIndex = 29;
@@ -318,7 +318,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Blue;
-            this.label3.Location = new System.Drawing.Point(316, 148);
+            this.label3.Location = new System.Drawing.Point(369, 148);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 12);
             this.label3.TabIndex = 30;
@@ -328,7 +328,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Blue;
-            this.label4.Location = new System.Drawing.Point(151, 148);
+            this.label4.Location = new System.Drawing.Point(176, 148);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 12);
             this.label4.TabIndex = 31;
@@ -338,7 +338,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Blue;
-            this.label5.Location = new System.Drawing.Point(6, 148);
+            this.label5.Location = new System.Drawing.Point(7, 148);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 12);
             this.label5.TabIndex = 32;
@@ -347,7 +347,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(570, 8);
+            this.label6.Location = new System.Drawing.Point(665, 8);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 12);
             this.label6.TabIndex = 33;
@@ -356,7 +356,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(703, 8);
+            this.label7.Location = new System.Drawing.Point(820, 8);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(29, 12);
             this.label7.TabIndex = 35;
@@ -364,18 +364,18 @@
             // 
             // speed
             // 
-            this.speed.Location = new System.Drawing.Point(633, 5);
+            this.speed.Location = new System.Drawing.Point(738, 5);
             this.speed.Name = "speed";
-            this.speed.Size = new System.Drawing.Size(69, 19);
+            this.speed.Size = new System.Drawing.Size(80, 19);
             this.speed.TabIndex = 36;
             this.speed.Text = "1";
             this.speed.TextChanged += new System.EventHandler(this.speed_TextChanged);
             // 
             // AddNextMedia
             // 
-            this.AddNextMedia.Location = new System.Drawing.Point(588, 71);
+            this.AddNextMedia.Location = new System.Drawing.Point(686, 71);
             this.AddNextMedia.Name = "AddNextMedia";
-            this.AddNextMedia.Size = new System.Drawing.Size(144, 21);
+            this.AddNextMedia.Size = new System.Drawing.Size(168, 21);
             this.AddNextMedia.TabIndex = 37;
             this.AddNextMedia.Text = "次のメディアを追加";
             this.AddNextMedia.UseVisualStyleBackColor = true;
@@ -383,9 +383,9 @@
             // 
             // RemoteCurrentMedia
             // 
-            this.RemoteCurrentMedia.Location = new System.Drawing.Point(588, 42);
+            this.RemoteCurrentMedia.Location = new System.Drawing.Point(686, 42);
             this.RemoteCurrentMedia.Name = "RemoteCurrentMedia";
-            this.RemoteCurrentMedia.Size = new System.Drawing.Size(144, 23);
+            this.RemoteCurrentMedia.Size = new System.Drawing.Size(168, 23);
             this.RemoteCurrentMedia.TabIndex = 38;
             this.RemoteCurrentMedia.Text = "現在のメディアを削除する";
             this.RemoteCurrentMedia.UseVisualStyleBackColor = true;
@@ -393,9 +393,9 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 638);
+            this.ClientSize = new System.Drawing.Size(856, 638);
             this.Controls.Add(this.RemoteCurrentMedia);
             this.Controls.Add(this.AddNextMedia);
             this.Controls.Add(this.speed);
